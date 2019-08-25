@@ -1,0 +1,23 @@
+{
+  "name": "dungeons_sem_dragons",
+  "version": "1.0.0",
+  "description": "Projeto 4 semestre",
+  "main": "index.js",
+  "scripts": {
+    "compile:sass": "node-sass sass/main.scss css/style.css --w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/guga72/Dungeons_sem_Dragons.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/guga72/Dungeons_sem_Dragons/issues"
+  },
+  "homepage": "https://github.com/guga72/Dungeons_sem_Dragons#readme",
+  "dependencies": {
+    "jest": "^24.9.0",
+    "node-sass": "^4.12.0"
+  }
+}

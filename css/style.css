@@ -1,0 +1,25 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; }
+
+html {
+  font-size: 62.5%; }
+
+body {
+  box-sizing: border-box; }
+
+* {
+  font-family: sans-serif; }
+
+.navbar {
+  position: fixed;
+  height: 10vh;
+  background-image: linear-gradient(to bottom right, #01024e, #543864);
+  width: 100%;
+  display: block; }
+  .navbar__title {
+    color: white;
+    font-size: 4rem; }

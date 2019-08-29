@@ -1,0 +1,23 @@
+.btn-1{
+    background-color: $color-4;
+    color: white;
+    width: 10rem;
+    border: none;
+    display: block;
+    border-radius: 100px;
+    height: 3.4rem;
+    box-shadow: 0.5rem 0.5rem 1rem #525151;
+    font-size: 2rem;
+
+    &:hover{
+        transform: translateY(0.05rem);
+    }
+
+    &:active{
+        transform: translateY(0.2rem);
+    }
+
+    &:focus{
+        outline:none;
+    }
+}

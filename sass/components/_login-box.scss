@@ -1,0 +1,40 @@
+.login-box {
+    color: $color-4;
+    background-color: $color-2;
+    display: block;
+    height: 40rem;
+    width: 30rem;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 5px;
+
+    &__title-box {
+        font-size: 2rem;
+        margin-top: 3rem;
+        position: absolute;
+        @include centralizar-horizontal;
+
+    }
+
+    &__field-box {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+
+        &__login-title {
+            transform: translateY(-3rem);
+        }
+    
+        &__field {
+            margin-bottom: 2.5rem;
+            color: white;
+            background-color: $color-1;
+            border: none;
+            height: 2.4rem;
+    
+        }
+    }
+}

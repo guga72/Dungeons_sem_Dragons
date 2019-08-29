@@ -3,16 +3,70 @@
 *::before {
   margin: 0;
   padding: 0;
-  box-sizing: inherit; }
+  box-sizing: inherit;
+  outline: none; }
+  *:focus,
+  *::after:focus,
+  *::before:focus {
+    outline: none; }
 
 html {
   font-size: 62.5%; }
 
 body {
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  background-color: #01024e; }
 
 * {
-  font-family: sans-serif; }
+  font-family: 'Crimson Text', serif; }
+
+.btn-1 {
+  background-color: #ff6464;
+  color: white;
+  width: 10rem;
+  border: none;
+  display: block;
+  border-radius: 100px;
+  height: 3.4rem;
+  box-shadow: 0.5rem 0.5rem 1rem #525151;
+  font-size: 2rem; }
+  .btn-1:hover {
+    transform: translateY(0.05rem); }
+  .btn-1:active {
+    transform: translateY(0.2rem); }
+  .btn-1:focus {
+    outline: none; }
+
+.login-box {
+  color: #ff6464;
+  background-color: #543864;
+  display: block;
+  height: 40rem;
+  width: 30rem;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 5px; }
+  .login-box__title-box {
+    font-size: 2rem;
+    margin-top: 3rem;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%); }
+  .login-box__field-box {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%); }
+    .login-box__field-box__login-title {
+      transform: translateY(-3rem); }
+    .login-box__field-box__field {
+      margin-bottom: 2.5rem;
+      color: white;
+      background-color: #01024e;
+      border: none;
+      height: 2.4rem; }
 
 .navbar {
   position: fixed;

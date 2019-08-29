@@ -1,6 +1,6 @@
 .login-box {
     color: $color-4;
-    background-color: $color-2;
+    background-color: rgba($color-2, 0.8);
     display: block;
     height: 40rem;
     width: 30rem;
@@ -37,6 +37,10 @@
             height: 2.4rem;
             border-radius: 0.5rem;
     
+        }
+
+        btn-1{
+            @include centralizar-horizontal;
         }
     }
 }

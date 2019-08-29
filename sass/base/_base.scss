@@ -13,10 +13,16 @@
 
 html {
     font-size: 62.5%;
+    height: 100%;
 }
 
 
 body {
     box-sizing: border-box;
-    background-color: $color-1;
+    background: linear-gradient(rgba($color-1, .8), rgba($color-1, .6)), url("../imgs/16928.jpg");
+    box-shadow: inset 0 0 0 1000rem rgba($color-1, 0.5);
+    background-size: cover;
+    background-position: top;
+    background-repeat: no-repeat;
+
 }

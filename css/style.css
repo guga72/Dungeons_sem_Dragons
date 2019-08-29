@@ -47,7 +47,7 @@ body {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  border-radius: 5px; }
+  border-radius: 0.5rem; }
   .login-box__title-box {
     font-size: 2rem;
     margin-top: 3rem;
@@ -62,11 +62,13 @@ body {
     .login-box__field-box__login-title {
       transform: translateY(-3rem); }
     .login-box__field-box__field {
+      margin-top: 1rem;
       margin-bottom: 2.5rem;
       color: white;
       background-color: #01024e;
       border: none;
-      height: 2.4rem; }
+      height: 2.4rem;
+      border-radius: 0.5rem; }
 
 .navbar {
   position: fixed;

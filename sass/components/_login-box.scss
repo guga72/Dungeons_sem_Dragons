@@ -8,7 +8,7 @@
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    border-radius: 5px;
+    border-radius: 0.5rem;
 
     &__title-box {
         font-size: 2rem;
@@ -29,11 +29,13 @@
         }
     
         &__field {
+            margin-top: 1rem;
             margin-bottom: 2.5rem;
             color: white;
             background-color: $color-1;
             border: none;
             height: 2.4rem;
+            border-radius: 0.5rem;
     
         }
     }

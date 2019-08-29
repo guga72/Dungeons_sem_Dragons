@@ -70,7 +70,7 @@ body {
       margin-top: 1rem;
       margin-bottom: 2.5rem;
       color: white;
-      background-color: #01024e;
+      background-color: rgba(1, 2, 78, 0.5);
       border: none;
       height: 2.4rem;
       border-radius: 0.5rem; }

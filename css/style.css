@@ -22,6 +22,23 @@ body {
   background-position: top;
   background-repeat: no-repeat; }
 
+a {
+  text-decoration: none; }
+  a:link, a:visited, a:hover, a:active {
+    color: #ff6464; }
+
+@keyframes press-btn1 {
+  0% {
+    transform: translateY(0); }
+  100% {
+    transform: translateY(0.2rem); } }
+
+@keyframes hover-btn1 {
+  0% {
+    transform: translateY(0); }
+  100% {
+    transform: translateY(0.05rem); } }
+
 * {
   font-family: 'Crimson Text', serif; }
 
@@ -33,12 +50,13 @@ body {
   display: block;
   border-radius: 100px;
   height: 3.4rem;
-  box-shadow: 0.5rem 0.5rem 1rem #525151;
   font-size: 2rem; }
   .btn-1:hover {
-    transform: translateY(0.05rem); }
+    transform: translateY(0.05rem);
+    transition: .2s; }
   .btn-1:active {
-    transform: translateY(0.2rem); }
+    transform: translateY(0.2rem);
+    transition: .05s; }
   .btn-1:focus {
     outline: none; }
 
@@ -74,7 +92,7 @@ body {
       border: none;
       height: 2.4rem;
       border-radius: 0.5rem; }
-    .login-box__field-box btn-1 {
+    .login-box__field-boxbtn-1 {
       left: 50%;
       transform: translateX(-50%); }
 

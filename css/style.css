@@ -27,18 +27,6 @@ a {
   a:link, a:visited, a:hover, a:active {
     color: #ff6464; }
 
-@keyframes press-btn1 {
-  0% {
-    transform: translateY(0); }
-  100% {
-    transform: translateY(0.2rem); } }
-
-@keyframes hover-btn1 {
-  0% {
-    transform: translateY(0); }
-  100% {
-    transform: translateY(0.05rem); } }
-
 * {
   font-family: 'Crimson Text', serif; }
 
@@ -47,18 +35,31 @@ a {
   color: white;
   width: 10rem;
   border: none;
-  display: block;
+  display: inline-block;
   border-radius: 100px;
   height: 3.4rem;
-  font-size: 2rem; }
+  font-size: 2rem;
+  text-align: center;
+  margin: 0.5rem; }
   .btn-1:hover {
     transform: translateY(0.05rem);
-    transition: .2s; }
+    transition: .05s; }
   .btn-1:active {
     transform: translateY(0.2rem);
     transition: .05s; }
   .btn-1:focus {
     outline: none; }
+
+.heading {
+  display: block;
+  height: 60vh;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%); }
+  .heading__text {
+    font-size: 2.5rem;
+    color: #ff6464; }
 
 .login-box {
   color: #ff6464;
@@ -92,9 +93,13 @@ a {
       border: none;
       height: 2.4rem;
       border-radius: 0.5rem; }
-    .login-box__field-boxbtn-1 {
+    .login-box__field-box.btn-1 {
       left: 50%;
       transform: translateX(-50%); }
+    .login-box__field-boxa {
+      left: 50%;
+      transform: translateX(-50%);
+      margin-top: 1rem; }
 
 .navbar {
   position: fixed;

@@ -3,10 +3,12 @@
     color: white;
     width: 10rem;
     border: none;
-    display: block;
+    display: inline-block;
     border-radius: 100px;
     height: 3.4rem;
     font-size: 2rem;
+    text-align: center;
+    margin: 0.5rem;
 
     &:hover{
         transform: translateY(0.05rem);

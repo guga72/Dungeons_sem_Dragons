@@ -39,8 +39,13 @@
     
         }
 
-        &btn-1{
+        &.btn-1{
             @include centralizar-horizontal;
+        }
+
+        &a{
+            @include centralizar-horizontal;
+            margin-top: 1rem;
         }
     }
 }

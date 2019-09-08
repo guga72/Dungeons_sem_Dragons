@@ -17,7 +17,7 @@ test('usuario deve ter senha', () => {
 
 test('usuario deve poder ter personagem', () => {
     const usuario = new Usuario('Tiago', 'xxPussySlayerxx', '12345678');
-    usuario.criarPersonagem('NoobSaibot');
+    usuario.criarPersonagem('NoobSaibot', 'Masculino');
     
     expect(usuario.personagem.getNome()).toBe('NoobSaibot');
 });

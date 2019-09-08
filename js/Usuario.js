@@ -8,8 +8,8 @@ class Usuario {
         this.personagem = null;
     }
     
-    criarPersonagem(name){
-        this.personagem = new Personagem(name);
+    criarPersonagem(name,sexo){
+        this.personagem = new Personagem(name, sexo);
     }
 
     getNome(){

@@ -6,11 +6,18 @@ test('usuario deve ter um nome', () => {
 });
 
 test('usuario deve ter id', () => {
-    const usuario = new Usuario('Ayres', 'xxPussySlayerxx');
-    expect(usuario.getId()).toBe('xxPussySlayerxx');
+    const usuario = new Usuario('Enzo', 'rockandroll');
+    expect(usuario.getId()).toBe('rockandroll');
 });
 
 test('usuario deve ter senha', () => {
-    const usuario = new Usuario('Oskar', 'BridgeBuildah', 'gobuildabridge');
-    expect(usuario.getSenha()).toBe('gobuildabridge');
+    const usuario = new Usuario('Tiago', 'hiuaehheu', '12345678');
+    expect(usuario.getSenha()).toBe('12345678');
+});
+
+test('usuario deve poder ter personagem', () => {
+    const usuario = new Usuario('Tiago', 'xxPussySlayerxx', '12345678');
+    usuario.criarPersonagem('NoobSaibot');
+    
+    expect(usuario.personagem.getNome()).toBe('NoobSaibot');
 });

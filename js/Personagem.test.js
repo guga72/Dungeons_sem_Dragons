@@ -15,10 +15,13 @@ test('personagem deve ter atributos', () => {
     const personagem = new Personagem('Fujiro Kakombi', 'Feminino');
     expect(personagem.getAtributos()).toStrictEqual(
         {
+            "Agilidade": 0,
+            "Constituição": 0,
             "Força": 0,
             "Inteligência": 0,
-            "Destreza": 0
+            "Destreza": 0,
+            "Carisma": 0
         }
-
     );
 });
+

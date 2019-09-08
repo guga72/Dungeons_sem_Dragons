@@ -3,9 +3,12 @@ class Personagem {
         this.nome = nome;
         this.sexo = sexo;
         this.atributos = {
+            "Agilidade": 0,
+            "Constituição": 0,
             "Força": 0,
             "Inteligência": 0,
-            "Destreza": 0
+            "Destreza": 0,
+            "Carisma": 0
         }
     }
     

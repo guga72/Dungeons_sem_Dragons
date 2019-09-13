@@ -21,3 +21,4 @@ test('usuario deve poder ter personagem', () => {
     
     expect(usuario.personagem.getNome()).toBe('NoobSaibot');
 });
+

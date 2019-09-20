@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node app.js",
     "compile:sass": "node-sass sass/main.scss css/style.css --w",
-    "test": "jest"
+    "test": "jest",
+    "test2": "cucumber-js"
   },
   "repository": {
     "type": "git",
@@ -23,5 +24,6 @@
     "express": "^4.17.1",
     "jest": "^24.9.0",
     "node-sass": "^4.12.0"
-  }
+  },
+  "keywords": []
 }

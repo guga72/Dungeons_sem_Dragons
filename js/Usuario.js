@@ -1,26 +1,29 @@
 const Personagem = require('./Personagem.js');
 
 class Usuario {
-    constructor(nome, id, senha) {
+    constructor(nome, id, senha, email) {
         this.nome = nome;
         this.id = id;
         this.senha = senha;
-        this.personagem = null;
+        this.email = email;
+        this.personagens = [];
     }
     
     criarPersonagem(name,sexo){
-        this.personagem = new Personagem(name, sexo);
+        let personagem = new Personagem(name, sexo);
+        this.personagens.add(personagem); 
     }
 
-    getNome(){
+    get nome() // ver como funciona o get e o nome do campo
+    {
         return this.nome;
     }
 
-    getId(){
+    get id(){
         return this.id;
     }
 
-    getSenha(){
+    get senha(){
         return this.senha;
     }
 }

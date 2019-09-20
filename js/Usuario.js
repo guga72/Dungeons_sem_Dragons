@@ -1,4 +1,5 @@
-const Personagem = require('./Personagem.js');
+//const Personagem = require('./Personagem.mjs');
+//import Personagem from './Personagem.mjs';
 
 class Usuario {
     constructor(nome, id, senha, email) {
@@ -11,9 +12,20 @@ class Usuario {
     
     criarPersonagem(name,sexo){
         let personagem = new Personagem(name, sexo);
-        this.personagens.add(personagem); 
+        this.personagens.push(personagem); 
     }
-
+   set nome(nome){
+        this._nome = nome;
+    }
+    set id(id){
+        this._id = id;
+    }
+    set senha(senha){
+        this._senha = senha;
+    }
+    set email(email){
+        this._email = email;
+    }
     get nome() // ver como funciona o get e o nome do campo
     {
         return this.nome;
@@ -28,5 +40,4 @@ class Usuario {
     }
 }
 
-
-module.exports = Usuario;
+//export default Usuario;

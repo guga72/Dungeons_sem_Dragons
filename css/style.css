@@ -25,11 +25,11 @@ body {
 a {
   text-decoration: none; }
   a:link, a:visited, a:hover, a:active {
-    color: #ff6464; }
+   /* color: #ff6464; */}
 
 * {
   font-family: 'Crimson Text', serif; }
-
+.btn-1 > a {color: #FFF;display: block; padding: 2px 1px;}
 .btn-1 {
   background-color: #ff6464;
   color: white;

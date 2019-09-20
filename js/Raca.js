@@ -8,4 +8,4 @@ class Raca {
     }
 }
 
-module.exports = Raca;
+//export default Raca;

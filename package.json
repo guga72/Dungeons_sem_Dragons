@@ -25,5 +25,8 @@
     "jest": "^24.9.0",
     "node-sass": "^4.12.0"
   },
-  "keywords": []
+  "keywords": [],
+  "devDependencies": {
+    "nodemon": "^1.19.2"
+  }
 }

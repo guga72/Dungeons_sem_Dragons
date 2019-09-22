@@ -38,4 +38,6 @@ class Personagem {
 
 }
 
+module.exports = Personagem;
+//export default class Personagem {}
 //export default Personagem;

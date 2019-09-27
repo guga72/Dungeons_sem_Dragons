@@ -100,13 +100,3 @@ a {
       left: 50%;
       transform: translateX(-50%);
       margin-top: 1rem; }
-
-.navbar {
-  position: fixed;
-  height: 10vh;
-  background-image: linear-gradient(to bottom right, #01024e, #543864);
-  width: 100%;
-  display: block; }
-  .navbar__title {
-    color: white;
-    font-size: 4rem; }

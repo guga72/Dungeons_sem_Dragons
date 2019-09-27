@@ -1,42 +1,51 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="../css/style.css">
-    <link href="https://fonts.googleapis.com/css?family=Crimson+Text&display=swap" rel="stylesheet">
-    <title>Dungeon Sem Dragons</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Login - Free Bulma template</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+    <!-- Bulma Version 0.7.x-->
+    <link rel="stylesheet" href="https://unpkg.com/bulma@0.7.5/css/bulma.min.css" />
+    <link rel="stylesheet" type="text/css" href="../css/login.css">
 </head>
+
 <body>
-        <form class="login-box" action="#">
-                <div class="login-box__title-box">
-                    <h1>Sign up</h1><br>
+    <section class="hero is-dark is-fullheight">
+        <div class="hero-body">
+            <div class="container has-text-centered">
+                <div class="column is-4 is-offset-4">
+                    <h3 class="title has-text-white">Cadastro</h3>
+                    <div class="box">
+                        <form>
+                            <div class="field">
+                                <div class="control">
+                                    <input class="input is-large" type="email" placeholder="Email" autofocus="">
+                                </div>
+                            </div>
+
+                            <div class="field">
+                                <div class="control">
+                                    <input class="input is-large" type="password" placeholder="Senha">
+                                </div>
+                            </div>
+
+                            <div class="field">
+                                <div class="control">
+                                    <input class="input is-large" type="password" placeholder="Confirmar Senha">
+                                </div>
+                            </div>
+                            <button class="button is-block is-info is-large is-fullwidth">Entrar</button>
+                        </form>
+                    </div>
                 </div>
-                <div class="login-box__field-box">
-                    <br><h3>E-mail</h3>
-                    <input type="email" name="email" class="login-box__field-box__field" required>
-                    <h3>Nome Usuário</h3>
-                    <input type="text" name="nome" required class="login-box__field-box__field">
-                    <h3>Senha:</h3>
-                    <input type="password" name="senha" class="login-box__field-box__field" required>
-                    <input type="submit" class="btn-1"></input>
-                    <br>
-                </div>
-            </form>
+            </div>
+        </div>
+    </section>
+    <script async type="text/javascript" src="../js/bulma.js"></script>
 </body>
-<script src="../js/Raca.js"></script>
-<script src="../js/Personagem.js"></script>
-<script src="../js/Usuario.js"></script>
-<script>
-  document.getElementsByClassName('btn-1')[0].addEventListener('click', function(e){
-    e.preventDefault();
-    let email = document.forms[0].email.value;
-    let nome =  document.forms[0].nome.value;
-    let senha = document.forms[0].senha.value;
-    var u = new Usuario(nome, 1, senha, email);
-    u.criarPersonagem('fasfsdgd', 'sdgsdgsdg');
-    console.log(u);    
-  });
-</script>
+
 </html>

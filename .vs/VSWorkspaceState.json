@@ -1,10 +1,11 @@
 {
   "ExpandedNodes": [
     "",
-    "\\features",
     "\\features\\step_definitions",
-    "\\js"
+    "\\js",
+    "\\js\\cookie",
+    "\\paginas"
   ],
-  "SelectedNode": "\\features\\step_definitions\\stepdefs.js",
+  "SelectedNode": "\\js\\cookie\\crud.js",
   "PreviewInSolutionExplorer": false
 }

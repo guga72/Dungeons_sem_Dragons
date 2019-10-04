@@ -1,7 +1,7 @@
 var express = require('express');
 var app = express();
 
-const Usuario = require('./js/Usuario.js');
+const Usuario = require('./../js/Usuario.js');
 
 
 // set the port of our application

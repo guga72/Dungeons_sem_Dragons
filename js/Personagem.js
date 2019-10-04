@@ -1,4 +1,4 @@
-//const Raca = require('./Raca.js');
+const Raca = require('./Raca.js');
 
 class Personagem {
     constructor(nome, sexo, raca) {
@@ -40,4 +40,4 @@ class Personagem {
 
 module.exports = Personagem;
 //export default class Personagem {}
-//export default Personagem;
+//moduexport default Personagem;

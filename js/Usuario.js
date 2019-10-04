@@ -1,5 +1,5 @@
-//const Personagem = require('./Personagem.mjs');
-//import Personagem from './Personagem.mjs';
+const Personagem = require('./Personagem.js');
+//import Personagem from './Personagem.js';
 
 class Usuario {
     constructor(nome, id, senha, email) {
@@ -38,6 +38,10 @@ class Usuario {
     get senha(){
         return this.senha;
     }
+
+    get email(){
+        return this.email;
+    }
 }
 
-//export default Usuario;
+module.export = Usuario;

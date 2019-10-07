@@ -1,8 +1,7 @@
 var express = require('express');
 var app = express();
 
-const Usuario = require('./../js/Usuario.js');
-
+const Usuario = require('./js/Usuario.js');
 
 // set the port of our application
 // process.env.PORT lets the port be set by Heroku
@@ -22,12 +21,10 @@ app.get('/', function(req, res) {
 });
 
 app.post('/paginas/cadastro.html', function(req, res) {
-
-    // ejs render automatically looks in the views folder
     var senha2 = req.params.senha2;
     var senha = req.params.senha;
     var email = req.params.email;
-    var users = new Usuario('teste', 1, senha, email);
+    const users = new Usuario('teste', 1, senha, email);
     res.redirect("../index.html");
 });
 

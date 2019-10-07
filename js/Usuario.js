@@ -1,7 +1,6 @@
 const Personagem = require('./Personagem.js');
-//import Personagem from './Personagem.js';
 
-class Usuario {
+module.exports = class Usuario {
     constructor(nome, id, senha, email) {
         this.nome = nome;
         this.id = id;
@@ -44,4 +43,4 @@ class Usuario {
     }
 }
 
-module.export = Usuario;
+//module.export = Usuario;

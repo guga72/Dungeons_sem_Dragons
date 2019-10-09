@@ -20,22 +20,22 @@
                 <div class="column is-4 is-offset-4">
                     <h3 class="title has-text-white">Cadastro</h3>
                     <div class="box">
-                        <form method="POST">
+                        <form>
                             <div class="field">
                                 <div class="control">
-                                    <input name="email" class="input is-large" type="email" placeholder="Email" autofocus="">
+                                    <input name="email" class="input is-large" type="email" placeholder="Email" autofocus="" id="email">
                                 </div>
                             </div>
 
                             <div class="field">
                                 <div class="control">
-                                    <input name="senha" class="input is-large" type="password" placeholder="Senha">
+                                    <input name="senha" class="input is-large" type="password" placeholder="Senha" id="senha">
                                 </div>
                             </div>
 
                             <div class="field">
                                 <div class="control">
-                                    <input name="confirmarsenha" class="input is-large" type="password" placeholder="Confirmar Senha">
+                                    <input name="confirmarsenha" class="input is-large" type="password" placeholder="Confirmar Senha" id="senha2">
                                 </div>
                             </div>
                             <button type="submit" class="button is-block is-success is-large is-fullwidth">Entrar</button>
@@ -45,7 +45,24 @@
             </div>
         </div>
     </section>
-    <!--<script async type="text/javascript" src="../js/bulma.js"></script>-->
+    <script>
+        /*const Usuario = require('./js/Usuario.js');
+        function validador(){
+            var email = document.getElementsByName("email");
+            var senha = document.getElementsByName("senha");
+            var senha2 = document.getElementByName("senha2");
+            if(senha == senha2){
+                const users = new Usuario('teste', 1, senha, email);
+                res.redirect("../index.html");
+            }
+            else{
+                alert("Senhas diferentes");
+            }
+    }*/
+    function logErrors(){
+
+    }
+    </script>
 </body>
 
 </html>

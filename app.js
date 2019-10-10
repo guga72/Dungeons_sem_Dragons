@@ -23,19 +23,11 @@ app.get('/', function(req, res) {
 
 app.post('/paginas/cadastro.html', function(req, res) {
     var teste = req.body;
-    console.log(teste);
-    console.log(teste.senha);
-    var senha2 =teste.confirmarsenha;
     var senha = teste.senha;
     var email = teste.email;
-    if (senha2 == senha){
-        const users = new Usuario('teste', 1, senha, email);
-        res.redirect("../index.html");
-    }
-    else{
-        app.use(logErrors);
-        //res.send({error:'Fudeu'});
-    }
+    
+    const users = new Usuario('teste', 1, senha, email);
+    res.redirect("../index.html");
 });
 
 app.listen(port, function() {

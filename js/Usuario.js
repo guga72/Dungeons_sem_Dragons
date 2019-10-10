@@ -1,6 +1,6 @@
-const Personagem = require('./Personagem.js');
+//const Personagem = require('./Personagem.js');
 
-module.exports = class Usuario {
+class Usuario {
     constructor(nome, email, senha) {
         this.nome = nome;
         this.email = email;

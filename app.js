@@ -1,35 +1,54 @@
 var express = require('express');
+const cookie = require('./js/cookie/cookie.js');
 var app = express();
-const Usuario = require('./js/Usuario.js');
+
+const Usuario = require('./js/Usuario.js'); // pedindo requisição da classe usuario
+
 var bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({extended: true}));
+//para pegar as informações do corpo da aplicação (pegar os dados do form)
 
-// set the port of our application
-// process.env.PORT lets the port be set by Heroku
+var mysql = require('mysql'); // começo da comunicação com o banco de dados
+var connetion = mysql.createConnection({ // criando a comunicação com o
+    host: 'localhost',                   // banco
+    user: 'root',
+    password: '123456' 
+});
+
 var port = process.env.PORT || 8080;
 
-// set the view engine to ejs
-//app.set('view engine', 'ejs');
-
-// make express look in the public directory for assets (css/js/img)
 app.use(express.static(__dirname));
 
-// set the home page route
-app.get('/', function(req, res) {
+connetion.connect();
 
-    // ejs render automatically looks in the views folder
+app.get('/', function(req, res) {
     res.sendFile('index.html');
 });
 
 app.post('/paginas/cadastro.html', function(req, res) {
-    var teste = req.body;
-    var senha = teste.senha;
-    var email = teste.email;
+    var corpo = req.body;
+    var senha = corpo.senha;
+    var email = corpo.email;
+    console.log(req.body);
+    const users = new Usuario('teste', senha, email);
+    //cookie.setCookie("email",corpo.email,2);
+    //res.cookie="email="+corpo.email+"; path=/";
+    res.cookie("email", corpo.email);
+    res.redirect("./game-page.html");
+});
+
+app.post('/paginas/login.html', function(req, res) {
+    var corpo = req.body;
+    var senha = corpo.senha;
+    var email = corpo.email;
     
     const users = new Usuario('teste', 1, senha, email);
-    res.redirect("../index.html");
+    res.redirect("./game-page.html");
 });
 
 app.listen(port, function() {
     console.log('Our app is running on http://localhost:' + port);
 });
+
+
+connetion.end();

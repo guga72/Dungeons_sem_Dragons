@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Dungeon Sem Dragons</title>
+    <script src="./js/cookie/crud.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
     <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">-->
     <!-- Bulma Version 0.7.x-->
@@ -14,6 +16,7 @@
 </head>
 
 <body>
+    <label id="topEmail"></label>
     <section class="hero is-black is-fullheight">
         <div class="buttons">
             <div class="button is-dark">a</div>
@@ -88,6 +91,11 @@
         </div>
     </section>
     <!--<script async type="text/javascript" src="../js/bulma.js"></script>-->
+    <script type="text/javascript">
+        //var email = document.cookie.split("=");
+        let emailLabel = document.getElementById('topEmail');
+        emailLabel.innerText = decodeURIComponent(document.cookie.split("=")[1]);
+    </script>
 </body>
 
 </html>

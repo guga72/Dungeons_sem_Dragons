@@ -1,3 +1,4 @@
+/*
 //CREATE/UPDATE/DELETE
 
 function setCookie(key, name, horas) {
@@ -31,3 +32,24 @@ function delCookie(key) {
   //          return "foda-se";
 //}
 //_____________________________________________________________________________________________________________________________________________________________
+
+*/
+class Cookie {
+    
+    
+    static setCookie(key, name, horas){
+        //set dada de expiração
+        var data = new Date();
+        data.setTime(data.getTime() + 60000*60*horas);
+
+        //cria cookie
+        document.cookie=key+"="+name+"; expires="+data.toUTCString+"; path=/";
+    }
+
+    static getCookieToString() {
+        return document.cookie.split("=");
+    }
+
+}
+
+module.exports = Cookie;

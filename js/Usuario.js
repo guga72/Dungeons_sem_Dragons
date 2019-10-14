@@ -12,6 +12,14 @@ class Usuario {
         let personagem = new Personagem(name, sexo);
         this.personagens.push(personagem); 
     }
+
+    login(){ //aqui será feito a parte de login do cliente procurando no banco de dados
+
+    }
+
+    cadastro(){  //aqui será feito o cadastro se o email ja não foi usado
+
+    }
 }
 
 module.exports = Usuario;

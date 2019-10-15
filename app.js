@@ -1,6 +1,5 @@
 var express = require('express');
 var cookieParser = require('cookie-parser')
-//const cookie = require('./js/cookie/cookie.js');
 var app = express();
 app.use(cookieParser());
 
@@ -20,6 +19,7 @@ var connetion = mysql.createConnection({ // criando a comunicação com o
 var port = process.env.PORT || 8080;
 let usuarios = [];
 app.use(express.static(__dirname));
+var http = require('http');
 
 //connetion.connect();
 
@@ -83,9 +83,15 @@ app.get('/', function(req, res) {
 });
 
 
+
 app.listen(port, function() {
     console.log('Our app is running on http://localhost:' + port);
 });
+
+http.createServer(function(req,res){
+    res.writeHead(200,{"Content-Type" : "text/plain"});
+    res.end("Hello World\n");
+}).listen(process.env.PORT)
 
 
 //connetion.end();

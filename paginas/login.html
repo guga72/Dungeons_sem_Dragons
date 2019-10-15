@@ -55,7 +55,6 @@
     <script>
     window.onload = function(req, res){
             if ( document.cookie.includes("email=") != false){
-                console.log('fodasse');
                 location.pathname = '/game-page';
             }
         }
@@ -68,7 +67,7 @@
             var span = document.getElementById('span');
             span.innerText = 'Senha ou usuario incorretos';
         }
-    })();
+    });
     </script>
     <!--<script async type="text/javascript" src="../js/bulma.js"></script> -->
 </body>

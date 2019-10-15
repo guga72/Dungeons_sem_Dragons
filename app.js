@@ -33,7 +33,9 @@ app.post('/paginas/cadastro.html', function(req, res) {
     var email = corpo.email;
     var cookie = req.cookies.email;
     if (cookie === undefined){
-        res.cookie("email",email, { maxAge: 100000, httpOnly: true });
+        res.cookie("email",email, { 
+            expires: new Date(Date.now()+10000),
+            path: '/' });
         console.log('cookie criado');
 
     }

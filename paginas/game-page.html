@@ -91,15 +91,12 @@
     </section>
     <!--<script async type="text/javascript" src="../js/bulma.js"></script>-->
     <script type="text/javascript">
-        //var email = document.cookie.split("=");
-        //let emailLabel = document.getElementById('topEmail');
         window.onload = function(req, res){
             var emailLabel = document.getElementById('topEmail');
-            emailLabel.innerText = req.cookies;
+            var usuario = document.cookie.substring(document.cookie.indexOf('email=')+6) //pega depois que aparece o 'email=' na string do cookie
+            usuario = usuario.replace("%40","@"); // troca o valor do %40 por @ para aparecer o emial bonitinho
+            emailLabel.innerText = usuario; // insere o email na label
         }
-        //console.log(document.cookie);
-        //emailLabel.innerText = document.cookie.email;
-        //emailLabel.innerText = decodeURIComponent(document.cookie.split("=")[1]);
     </script>
 </body>
 

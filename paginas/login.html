@@ -53,10 +53,12 @@
         </div>
     </section>
     <script>
-    /*function login_erro(){
-        var span = document.getElementById('span');
-        span.innerText = 'senha ou usuario incorretos';
-    }*/
+    window.onload = function(req, res){
+            if ( document.cookie.includes("email=") != false){
+                console.log('fodasse');
+                location.pathname = '/game-page';
+            }
+        }
     (function(){
         let url = window.location
         

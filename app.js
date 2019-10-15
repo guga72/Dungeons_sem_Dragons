@@ -51,7 +51,7 @@ app.get('/', function(req, res) {
     }
     
 }).get('/game-page', (req,res) =>{
-    //TODO: Vocês vão ter que ver como faz pra ver se cookie com o usuário já está lá
+    res.sendFile(`${__dirname}/paginas/game-page.html`);
 }).post('/game-page', (req, res)=>{
     let email = req.body.email;
     let senha = req.body.senha;

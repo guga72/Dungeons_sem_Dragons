@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app = "telaJogo">
 
 <head>
     <meta charset="utf-8">
@@ -11,14 +11,14 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">-->
     <!-- Bulma Version 0.7.x-->
     <link rel="stylesheet" href="https://unpkg.com/bulma@0.7.5/css/bulma.min.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
     <!--<link rel="stylesheet" type="text/css" href="../css/login.css">-->
 </head>
-
-<body>
+<body ng-controller="telaJogoContr">
     <label id="topEmail"></label>
     <section class="hero is-black is-fullheight">
         <div class="buttons">
-            <div class="button is-dark">a</div>
+            <div id="emailuser" class="button is-dark"></div>
             <div class="button is-dark">b</div>
             <div class="button is-dark">c</div>
             <div class="button is-dark">d</div>
@@ -39,6 +39,13 @@
                             Administration
                         </p>
                         <ul class="menu-list">
+
+                            <h1 ng-repeat="escolha in escolhas">
+                                {{escolha}}
+                            <h1> <!--será usado para fazer mostrar as escolhas do usuario-->
+
+
+                            <!--<li ng-repeat="escolha in escolhas">{{escolha}}</li>-->
                             <li><a>Team Settings</a></li>
                             <li>
                             <a class="is-active">Manage Your Team</a>
@@ -92,11 +99,17 @@
     <!--<script async type="text/javascript" src="../js/bulma.js"></script>-->
     <script type="text/javascript">
         window.onload = function(req, res){
-            var emailLabel = document.getElementById('topEmail');
+            var emailLabel = document.getElementById('emailuser');
             var usuario = document.cookie.substring(document.cookie.indexOf('email=')+6) //pega depois que aparece o 'email=' na string do cookie
             usuario = usuario.replace("%40","@"); // troca o valor do %40 por @ para aparecer o emial bonitinho
             emailLabel.innerText = usuario; // insere o email na label
         }
+        angular.module("telaJogo",[]);
+        angular.module("telaJogo").controller("telaJogoContr",function($scope){
+            $scope.escolhas = [
+                "fodasse"
+            ]
+        });
     </script>
 </body>
 

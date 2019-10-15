@@ -28,5 +28,13 @@
         </div>
     </div>
   </section>
+  <script>
+      window.onload = function(req, res){
+            if ( document.cookie.includes("email=") != false){
+                console.log('fodasse');
+                location.pathname = '/game-page';
+            }
+        }
+  </script>
   </body>
 </html>

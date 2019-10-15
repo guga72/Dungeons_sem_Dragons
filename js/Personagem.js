@@ -7,6 +7,7 @@ class Personagem {
         this.sexo = sexo;
         this.raca = raca;
         this.level = 1;
+        this.gold = 0;
         this.potions = {
             "vida":0,
             "força": 0,
@@ -20,6 +21,9 @@ class Personagem {
             "Destreza": 0,
             "Carisma": 0
         }
+        this.ataques = []; // habilidades que poderão ser usadas durante o combate
+        this.itens = []; // os tres estarão somente no banco de dados
+        this.quest = [];
     }
     perda_vida(dano){
         this.vida = this.vida - dano;
@@ -31,6 +35,14 @@ class Personagem {
 
     ataque(){
         perda_vida(this.atributos.Força); // colocar para ser o do inimigo que vai tomar dano
+    }
+
+    ganhar_gold(gold){
+        this.gold += gold;
+    }
+    sair_combate(){ //metodo para sair do combate
+        
+        this.vida -= 20;
     }
 }
 

@@ -53,9 +53,29 @@ app.post('/paginas/login.html', function(req, res) {
     var corpo = req.body;
     var senha = corpo.senha;
     var email = corpo.email;
+    if( email == 'gustavo@isso.com' && senha == '1'){//ver se existe no banco de dados a pessoa (oque deveria fazer)
+        var cookie = req.cookies.email;
+        if (cookie === undefined){
+            res.cookie("email",email, { 
+                expires: new Date(Date.now()+10000),
+                path: '/' });
+            console.log('cookie criado');
     
-    const users = new Usuario('teste', 1, senha, email);
-    res.redirect("./game-page.html");
+        }
+        else{
+            console.log('cookie existente');
+        }
+        res.redirect("./game-page.html");
+    }
+    else{
+        //pagina = window.open("paginas/login.html");
+        /*pagina.addEventListener('load',function(){*/
+            //pagina.login_erro();
+        /*})*/
+        //res.redirect("./login.html");
+        //login_erro();
+    }
+    //const users = new Usuario('teste', 1, senha, email);
 });
 
 app.listen(port, function() {

@@ -20,17 +20,18 @@
                 <div class="column is-4 is-offset-4">
                     <h3 class="title has-text-white">Login</h3>
                     <p class="subtitle has-text-white">Identifique-se para prosseguir</p>
+                    <span id="span" name="span"></span>
                     <div class="box">
-                        <form action="game-page.html">
+                        <form method="POST">
                             <div class="field">
                                 <div class="control">
-                                    <input name="email" class="input is-large" type="email" placeholder="Email" autofocus="">
+                                    <input name="email" class="input is-large" type="email" placeholder="Email" autofocus="" id="email">
                                 </div>
                             </div>
 
                             <div class="field">
                                 <div class="control">
-                                    <input name="senha" class="input is-large" type="password" placeholder="Password">
+                                    <input name="senha" class="input is-large" type="password" placeholder="Password" id="senha">
                                 </div>
                             </div>
                             <div class="field">
@@ -51,6 +52,12 @@
             </div>
         </div>
     </section>
+    <script>
+    function login_erro(){
+        var span = document.getElementById('span');
+        span.innerText = 'senha ou usuario incorretos';
+    }
+    </script>
     <!--<script async type="text/javascript" src="../js/bulma.js"></script> -->
 </body>
 

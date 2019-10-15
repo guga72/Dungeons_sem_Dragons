@@ -18,65 +18,70 @@ var connetion = mysql.createConnection({ // criando a comunicação com o
 });*/
 
 var port = process.env.PORT || 8080;
-
+let usuarios = [];
 app.use(express.static(__dirname));
 
 //connetion.connect();
 
 app.get('/', function(req, res) {
     res.sendFile('index.html');
-});
+}).get('/cadastro', (req, res) =>{
+    res.sendFile(`${__dirname}/paginas/cadastro.html`);
+}).get('/login', (req, res)=>{
+    res.sendFile(`${__dirname}/paginas/login.html`);
+}).post('/login', (req, res)=>{
+   
+    let reqBody = req.body;
+    let senha = reqBody.senha;
+    let email = reqBody.email;
+    let novoUser = {email, senha};
+    var isNotCadastrado = true;
+    usuarios.forEach(usuario =>{
+        if(usuario.email === email){
+            isNotCadastrado = false;
+        }
+    });
 
-app.post('/paginas/cadastro.html', function(req, res) {
-    var corpo = req.body;
-    var senha = corpo.senha;
-    var email = corpo.email;
-    var cookie = req.cookies.email;
-    if (cookie === undefined){
-        res.cookie("email",email, { 
-            expires: new Date(Date.now()+10000),
-            path: '/' });
-        console.log('cookie criado');
-
+    if(isNotCadastrado){
+        usuarios.push(novoUser);
+        console.log(usuarios);
+        res.sendFile(`${__dirname}/paginas/login.html`);
+    }else{
+        res.redirect('/cadastro?errCad=true');
     }
-    else{
-        console.log('cookie existente');
-    }
-    const users = new Usuario('teste', senha, email);
-    //cookie.setCookie("email",corpo.email,2);
-    //res.cookie="email="+corpo.email+"; path=/";
-    //res.cookie("email", corpo.email);
-    res.redirect("./game-page.html");
-});
+    
+}).get('/game-page', (req,res) =>{
+    //TODO: Vocês vão ter que ver como faz pra ver se cookie com o usuário já está lá
+}).post('/game-page', (req, res)=>{
+    let email = req.body.email;
+    let senha = req.body.senha;
+    var isValidUser = false;
 
-app.post('/paginas/login.html', function(req, res) {
-    var corpo = req.body;
-    var senha = corpo.senha;
-    var email = corpo.email;
-    if( email == 'gustavo@isso.com' && senha == '1'){//ver se existe no banco de dados a pessoa (oque deveria fazer)
+    usuarios.forEach(usuario=>{
+        if(usuario.email === email && usuario.senha === senha){
+            isValidUser = true;
+            return 0;
+        }
+    });
+    if(isValidUser){
         var cookie = req.cookies.email;
         if (cookie === undefined){
             res.cookie("email",email, { 
                 expires: new Date(Date.now()+10000),
                 path: '/' });
             console.log('cookie criado');
-    
+
         }
         else{
             console.log('cookie existente');
         }
-        res.redirect("./game-page.html");
+
+        res.sendFile(`${__dirname}/paginas/game-page.html`);
+    }else{
+        res.redirect('/login?errLogin=true');
     }
-    else{
-        //pagina = window.open("paginas/login.html");
-        /*pagina.addEventListener('load',function(){*/
-            //pagina.login_erro();
-        /*})*/
-        //res.redirect("./login.html");
-        //login_erro();
-    }
-    //const users = new Usuario('teste', 1, senha, email);
 });
+
 
 app.listen(port, function() {
     console.log('Our app is running on http://localhost:' + port);

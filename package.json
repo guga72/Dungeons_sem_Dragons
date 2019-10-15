@@ -4,7 +4,7 @@
   "description": "Projeto 4 semestre",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js",
+    "start": "nodemon app.js",
     "compile:sass": "node-sass sass/main.scss css/style.css --w",
     "test": "jest",
     "test2": "cucumber-js"
@@ -33,6 +33,6 @@
     "@babel/core": "^7.6.0",
     "@babel/preset-env": "^7.6.0",
     "@babel/register": "^7.6.0",
-    "nodemon": "^1.19.2"
+    "nodemon": "^1.19.3"
   }
 }

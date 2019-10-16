@@ -21,7 +21,10 @@ let usuarios = [];
 app.use(express.static(__dirname));
 var http = require('http');
 
-//connetion.connect();
+/*connetion.connect(function(err){
+    if(err) return console.log(err);
+    console.log('conectou!');
+  });*/
 
 app.get('/', function(req, res) {
     res.sendFile('index.html');

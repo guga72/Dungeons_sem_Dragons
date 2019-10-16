@@ -16,7 +16,6 @@ var connetion = mysql.createConnection({ // criando a comunicação com o
     password: '123456' 
 });*/
 
-var port = process.env.PORT || 8080;
 let usuarios = [];
 app.use(express.static(__dirname));
 var http = require('http');
@@ -85,16 +84,10 @@ app.get('/', function(req, res) {
     }
 });
 
-
-
+var port = process.env.PORT || 8080;
 app.listen(port, function() {
     console.log('Our app is running on http://localhost:' + port);
 });
-
-http.createServer(function(req,res){
-    res.writeHead(200,{"Content-Type" : "text/plain"});
-    res.end("Hello World\n");
-}).listen(process.env.PORT)
 
 
 //connetion.end();

@@ -84,10 +84,14 @@ app.get('/', function(req, res) {
     }
 });
 
-var port = process.env.PORT || 8080;
+/*var port = process.env.PORT || 8080;
 app.listen(port, function() {
     console.log('Our app is running on http://localhost:' + port);
-});
+});*/
+var server = app.listen(process.env.PORT || 8080, function () {
+    var port = server.address().port;
+    console.log("App now running on port", port);
+  });
 
 
 //connetion.end();

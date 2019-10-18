@@ -5,16 +5,20 @@ const domContainer = document.querySelector('#main');
 class LikeButton extends React.Component {
     constructor(props) {
       super(props);
-      this.state = { liked: false };
+      this.state = { tela: 'telaCastelo' };
     }
   
     render() {
-      if (this.state.liked) {
-        return 'You liked this.';
+      if (this.state.tela == 'telaCastelo') {
+        return (
+          <center>
+            <img src="../imagens/Castelo_Phyton_da_Colina.jpg" /> 
+          </center>
+        );
       }
   
       return (
-        <button onClick={() => this.setState({ liked: true })}>
+        <button onClick={() => this.setState({ tela1: 'true' })}>
           Like
         </button>
       );

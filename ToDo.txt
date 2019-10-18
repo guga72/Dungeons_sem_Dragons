@@ -1,4 +1,4 @@
-criar mais páginas para criar o personagem
+criar um model para a criação do personagem
 terminar os metodos da classe do inimigo e do personagem
 ver no pivotal tracker para ver oque mais é preciso ser feito
 ver se precisa criar uma classe para habilidade, item, entre outros ou se pode ser so uma tabela no BD

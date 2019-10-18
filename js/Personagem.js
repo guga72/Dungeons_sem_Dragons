@@ -3,6 +3,7 @@ const Raca = require('./Raca.js');
 class Personagem {
     constructor(nome, sexo, raca) {
         this.vida = 100;
+        this.vida_max = 100;
         this.nome = nome;
         this.sexo = sexo;
         this.raca = raca;
@@ -43,6 +44,9 @@ class Personagem {
     sair_combate(){ //metodo para sair do combate
         
         this.vida -= 20;
+    }
+    descansar(){
+        this.vida = this.vida_max;
     }
 }
 

@@ -1,5 +1,6 @@
 var express = require('express');
-var cookieParser = require('cookie-parser')
+var cookieParser = require('cookie-parser');
+const path = require('path')
 var app = express();
 app.use(cookieParser());
 

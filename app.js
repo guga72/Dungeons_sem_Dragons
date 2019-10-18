@@ -17,7 +17,7 @@ var connetion = mysql.createConnection({ // criando a comunicação com o
 });*/
 
 let usuarios = [];
-app.use(express.static(__dirname));
+app.use(express.static(path.join(__dirname, 'public')));
 var http = require('http');
 
 /*connetion.connect(function(err){

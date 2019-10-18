@@ -1,4 +1,6 @@
-class inimigo{
+const Inimigo = require('./Personagem');
+
+class Inimigo{
     constructor(){
         this.nome = nome;
         this.sexo = sexo;
@@ -14,6 +16,7 @@ class inimigo{
             "Inteligência": 0,
             "Destreza": 0
         }
+        this.item = item;
     }
     perda_vida(dano){
         this.vida = this.vida - dano;
@@ -23,7 +26,13 @@ class inimigo{
         perda_vida(this.atributos.Força); // colocar para ser o do personagem que vai tomar dano
     }
 
-    dropar_gold(){
-        ganhar_gold(this.gold);//fazer com que o gold do inimigo va para o personagem
+    dropar_gold(personagem){
+        personagem.ganhar_gold(this.gold);//fazer com que o gold do inimigo va para o personagem
+    }
+
+    dropar_item(){
+
     }
 }
+
+module.exports = Inimigo;

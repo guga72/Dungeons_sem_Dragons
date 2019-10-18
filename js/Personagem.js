@@ -1,4 +1,5 @@
 const Raca = require('./Raca.js');
+const Inimigo = require('./inimigo');
 
 class Personagem {
     constructor(nome, sexo, raca) {
@@ -34,15 +35,14 @@ class Personagem {
         this.vida = this.vida + potion;
     }
 
-    ataque(){
-        perda_vida(this.atributos.Força); // colocar para ser o do inimigo que vai tomar dano
+    ataque(inimigo){
+        inimigo.perda_vida(this.atributos.Força); // colocar para ser o do inimigo que vai tomar dano
     }
 
     ganhar_gold(gold){
         this.gold += gold;
     }
     sair_combate(){ //metodo para sair do combate
-        
         this.vida -= 20;
     }
     descansar(){
@@ -51,5 +51,3 @@ class Personagem {
 }
 
 module.exports = Personagem;
-//export default class Personagem {}
-//moduexport default Personagem;

@@ -6,12 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Dungeon Sem Dragons</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script> -->
     <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">-->
     <!-- Bulma Version 0.7.x-->
     <link rel="stylesheet" href="https://unpkg.com/bulma@0.7.5/css/bulma.min.css" />
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script> -->
     <!--<link rel="stylesheet" type="text/css" href="../css/login.css">-->
 </head>
 <body ng-controller="telaJogoContr">
@@ -77,7 +77,7 @@
                     <article class="tile is-child notification is-danger">
                         <p class="title">Tela do Jogo</p>
                         <p class="subtitle">Aqui vão as imagens do jogo</p>
-                        <div class="content">
+                        <div class="main" id="main">
                             <!-- Content -->
                         </div>
                     </article>
@@ -104,13 +104,12 @@
             usuario = usuario.replace("%40","@"); // troca o valor do %40 por @ para aparecer o emial bonitinho
             emailLabel.innerText = usuario; // insere o email na label
         }
-        angular.module("telaJogo",[]);
-        angular.module("telaJogo").controller("telaJogoContr",function($scope){
-            $scope.escolhas = [
-                "fodasse"
-            ]
-        });
+        
     </script>
+    <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <script type="text/babel" src="../js/gamePages/board.js"></script>
 </body>
 
 </html>

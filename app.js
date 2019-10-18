@@ -1,5 +1,6 @@
 var express = require('express');
-var cookieParser = require('cookie-parser')
+var cookieParser = require('cookie-parser');
+const path = require('path')
 var app = express();
 app.use(cookieParser());
 
@@ -17,7 +18,7 @@ var connetion = mysql.createConnection({ // criando a comunicação com o
 });*/
 
 let usuarios = [];
-app.use(express.static(__dirname));
+app.use(express.static(path.join(__dirname, 'public')));
 var http = require('http');
 
 /*connetion.connect(function(err){
@@ -25,12 +26,12 @@ var http = require('http');
     console.log('conectou!');
   });*/
 
-app.get('/', function(req, res) {
+app.get('/public', function(req, res) {
     res.sendFile('index.html');
 }).get('/cadastro', (req, res) =>{
-    res.sendFile(`${__dirname}/paginas/cadastro.html`);
+    res.sendFile(`${__dirname}/public/paginas/cadastro.html`);
 }).get('/login', (req, res)=>{
-    res.sendFile(`${__dirname}/paginas/login.html`);
+    res.sendFile(`${__dirname}/public/paginas/login.html`);
 }).post('/login', (req, res)=>{
    
     let reqBody = req.body;
@@ -47,13 +48,13 @@ app.get('/', function(req, res) {
     if(isNotCadastrado){
         usuarios.push(novoUser);
         console.log(usuarios);
-        res.sendFile(`${__dirname}/paginas/login.html`);
+        res.sendFile(`${__dirname}/public/paginas/login.html`);
     }else{
         res.redirect('/cadastro?errCad=true');
     }
     
 }).get('/game-page', (req,res) =>{
-    res.sendFile(`${__dirname}/paginas/game-page.html`);
+    res.sendFile(`${__dirname}/public/paginas/game-page.html`);
 }).post('/game-page', (req, res)=>{
     let email = req.body.email;
     let senha = req.body.senha;
@@ -78,7 +79,7 @@ app.get('/', function(req, res) {
             console.log('cookie existente');
         }
 
-        res.sendFile(`${__dirname}/paginas/game-page.html`);
+        res.sendFile(`${__dirname}/public/paginas/game-page.html`);
     }else{
         res.redirect('/login?errLogin=true');
     }

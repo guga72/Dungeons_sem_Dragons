@@ -1,24 +1,25 @@
-//const Personagem = require('./Personagem.js');
+const personagem = require('./personagens.js');
 
 class Usuario {
-    constructor(nome, email, senha) {
-        this.nome = nome;
-        this.email = email;
-        this.senha = senha;
-        this.personagens = [];
-    }
-    
-    criarPersonagem(name,sexo){
-        let personagem = new Personagem(name, sexo);
-        this.personagens.push(personagem); 
+    constructor(email, senha) {
+        this.email = email,
+        this.senha = senha,
+        this.personagens = []
     }
 
-    login(){ //aqui será feito a parte de login do cliente procurando no banco de dados
-
+    criarPersonagemJogador(nome, sexo, raca, classe){
+        let p = personagem.personagemJogador(nome, sexo);
+        personagem.comporPersonagemJogador(p, raca, classe);
+        this.personagens.push(p);
     }
 
-    cadastro(){  //aqui será feito o cadastro se o email ja não foi usado
+    apagarPersonagem(){
+    }
 
+    login(){
+    }
+
+    cadastro(){
     }
 }
 

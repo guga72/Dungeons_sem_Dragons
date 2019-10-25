@@ -1,7 +1,7 @@
 'use strict'
 
 const domContainer = document.querySelector('#main');
-const cenario = require('./ReactPages/test');
+//const cenarios = require('../../js/mapa');
 
 class LikeButton extends React.Component {
     constructor(props) {

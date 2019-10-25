@@ -19,12 +19,15 @@ Fazer grafo:
         
 */
 
-function cenario(nome, ligacoes, npcs, inimigos) {
+function cenario(nome, atraiInimigos) {
     return{
         nome: nome,
-        ligacoes: ligacoes,//[cenarios]
-        npcs: npcs, //[npcs]
-        inimigos: inimigos//[inimigos]
+        ligacoes: [],//[cenarios]
+        npcs: [], //[npcs]
+        atraiInimigos, //true ou false
+        inimigos: []//[inimigos][]
     }
 }
 
+const cenarioInicial = cenario('Cenário Inicial', false)
+const segundoCenario = cenario('Segundo Cenário', true)

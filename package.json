@@ -4,8 +4,8 @@
   "description": "Projeto 4 semestre",
   "main": "app.js",
   "scripts": {
-    "start": "nodemon app.js",
-    "compile:sass": "node-sass sass/main.scss css/style.css --w",
+    "start": "nodemon app.js && npm run compile:sass",
+    "compile:sass": "node-sass public/bulma/bulma.sass public/bulma/css/bulma.css --watch",
     "test": "jest",
     "test2": "cucumber-js"
   },
@@ -26,7 +26,7 @@
     "express": "^4.17.1",
     "jest": "^24.9.0",
     "mysql": "^2.17.1",
-    "node-sass": "^4.12.0"
+    "node-sass": "^4.13.0"
   },
   "keywords": [],
   "devDependencies": {

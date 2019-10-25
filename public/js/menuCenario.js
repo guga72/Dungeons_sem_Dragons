@@ -8,6 +8,13 @@ class menuCenario extends React.Component {
       super(props);
       this.state = {tela: cenarioInicial};
     }
+
+    apresentarPassagens(){
+      let ligs = []
+      for(i = 0; i < this.state.tela.ligacoes.length; i++){
+        ligs.push(<li><a>Dashboard</a></li>)
+      }
+    }
   
     render() {
         return (
@@ -16,8 +23,13 @@ class menuCenario extends React.Component {
                 {this.state.tela.nome}
             </p>
             <ul class="menu-list">
+                {
+                this.apresentarPassagens();
+                /*
                 <li><a>Dashboard</a></li>
                 <li><a>Customers</a></li>
+                */
+                }
             </ul>
             <p class="menu-label">
                 NPC

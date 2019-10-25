@@ -1,27 +1,40 @@
 'use strict'
 
 const domContainer = document.querySelector('#main');
+const cenario = require('./ReactPages/test');
 
 class LikeButton extends React.Component {
     constructor(props) {
       super(props);
-      this.state = { tela: 'telaCastelo' };
+      this.state = { tela: 'Castelo_Phyton-Comeco_do_jogo' };
+
+      this.changeTelaState = this.changeTelaState.bind(this);
+    }
+
+    changeTelaState() {
+      this.setState({ tela: 'Trono_Castelo_Pyton-Comeco_do_jogo' })
     }
   
     render() {
-      if (this.state.tela == 'telaCastelo') {
+      if (this.state.tela == 'Castelo_Phyton-Comeco_do_jogo') {
         return (
           <center>
-            <img src="../imagens/Castelo_Phyton_da_Colina.jpg" /> 
-          </center>
+            <h1>Tela State = {this.state.tela}</h1>
+             <img src="../imagens/Castelo_Phyton_da_Colina.jpg" /> 
+             <button onClick={this.changeTelaState} >test</button>
+          </center>   
         );
       }
-  
-      return (
-        <button onClick={() => this.setState({ tela1: 'true' })}>
-          Like
-        </button>
-      );
+      
+      if (this.state.tela == 'Trono_Castelo_Pyton-Comeco_do_jogo') {
+       return (
+          <center>
+            <h1>Tela State = {this.state.tela}</h1>
+           <img src="../imagens/Sala_do_Trono.jpg" />
+           <button onClick={this.changeTelaState} >test</button>
+          </center>     
+        );
+      }
     }
   }
 

@@ -41,3 +41,7 @@ const comporItem = (item) => {
         eqpv
     );
 }
+
+module.exports = {
+    comporItem: comporItem,
+}

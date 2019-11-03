@@ -11,7 +11,7 @@ const comporPersonagemJogador = (personagem, rc, cl) => {
         personagem,
         raca.comporRaca(rc),
         classe.comporClasse(cl),
-        calcularAtributosSecundarios(personagem)
+        atributosbonus(personagem)
     );
 }
 
@@ -29,7 +29,6 @@ function personagemJogador(nome, sexo){
         gold: 1,
         usarItem: usarItem,
         level: 1,
-        atributos: atributos.atributos(0,0,0,0),
         eqpCabeca: null,
         eqpMaoDireita: null,
         eqpMaoEsquerda: null,
@@ -54,7 +53,17 @@ const personagemInimigo = (nome, hp, ataque, magia, img) =>
 //Função que retorna atributos:
 
 function atributosbonus(personagem){
+    let ataqueBonus = personagem.eqpCabeca.ataque + personagem.eqpMaoDireita.ataque + personagem.eqpMaoEsquerda.ataque + personagem.eqpBotas.ataque + personagem.eqpTronco.ataque
+    let defesaBonus = personagem.eqpCabeca.defesa + personagem.eqpMaoDireita.defesa + personagem.eqpMaoEsquerda.defesa + personagem.eqpBotas.defesa + personagem.eqpTronco.defesa
+    let magiaBonus = personagem.eqpCabeca.magia + personagem.eqpMaoDireita.magia + personagem.eqpMaoEsquerda.magia + personagem.eqpBotas.magia + personagem.eqpTronco.magia
+    let defesaMBonus = personagem.eqpCabeca.defesam + personagem.eqpMaoDireita.ataque + personagem.eqpMaoEsquerda.ataque + personagem.eqpBotas.ataque + personagem.eqpTronco.ataque
 
+    return {
+        ataqueBonus: ataqueBonus,
+        defesaBonus: defesaBonus,
+        magiaBonus: magiaBonus,
+        defesaMBonus: defesaMbonus
+    }
 }
 
 /*

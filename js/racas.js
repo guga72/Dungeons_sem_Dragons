@@ -1,4 +1,4 @@
-const personagem = require('./personagens');
+const atributos = require('./atributos');
 
 const Orc = () => {};
 const Elfo = () => {};
@@ -12,18 +12,18 @@ const Humano = () => {};
 function comporRaca(raca){
     switch(raca){
         case "Orc":
-            personagem.atributos = (1,4,4,0,1,0);
+            atributos.atributos = (3,0,3,0);
             break;
         case "Elfo":
-            personagem.atributos = (2,1,1,3,3,0);
+            atributos.atributos = (0,3,0,3);
             break;
         case "Humano":
-            personagem.atributos = (2,2,2,2,1,1);
+            atributos.atributos = (2,1,2,1);
             break;
     }
     return {
         raca: raca,
-        atributos: personagem.atributos
+        atributos: atributos.atributos
     };
 }
 

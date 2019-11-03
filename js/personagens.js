@@ -1,5 +1,6 @@
 const raca = require('./racas');
 const classe = require('./classes');
+const atributos = require('./atributos');
 
 /*
     Composição final de um personagem de jogador
@@ -27,7 +28,13 @@ function personagemJogador(nome, sexo){
         max_peso: 50,
         gold: 1,
         usarItem: usarItem,
-        level: 1
+        level: 1,
+        atributos: atributos.atributos(0,0,0,0),
+        eqpCabeca: null,
+        eqpMaoDireita: null,
+        eqpMaoEsquerda: null,
+        eqpBotas: null,
+        eqpTronco: null
     }
 }
 
@@ -45,22 +52,9 @@ const personagemInimigo = (nome, hp, ataque, magia, img) =>
 */
 
 //Função que retorna atributos:
-function atributos(agi, cst, str, itl, dex, chr){
-    return {
-        agilidade: agi,
-        constituicao: cst,
-        forca: str,
-        inteligencia: itl,
-        destreza: dex,
-        carisma: chr
-    };
-}
 
-function calcularAtributosSecundarios(jogador){
-    return {
-        maxVida: 100 + jogador.constituicao * jogador.level,
-        ataque: jogador.forca * jogador.level
-    }
+function atributosbonus(personagem){
+
 }
 
 /*

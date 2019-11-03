@@ -1,3 +1,5 @@
+const atributos = require('./atributos');
+
 const item = (nome, preco, consumivel, equipavel) => {
     return {
         nome: nome,
@@ -16,12 +18,11 @@ const consumivel = (efeito) => {
     }
 }
 
-const equipavel = (cls, atq, def) => {
-    return {
-        classe: cls,
-        ataque: atq,
-        defesa: def
-    }
+const equipavel = (atq, def, mag, magm) => {
+    return Object.assign(
+        item,
+        atributos.atributos(atq, mag, def, magm)
+    )
 }
 
 

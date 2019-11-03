@@ -45,14 +45,13 @@ class gamePage extends React.Component {
                                     <p class="title">Outras Opções</p>
                                     <p class="subtitle">With even more content</p>
                                     <div class="content">
-                                        <!-- Content -->
+
                                     </div>
                                 </div>
                             </article>
                         </div>
                     </div>
                 </section>
-                <!--<script async type="text/javascript" src="../js/bulma.js"></script>-->
                 <script type="text/javascript">
                     window.onload = function(req, res){
                         var emailLabel = document.getElementById('emailuser');
@@ -66,9 +65,6 @@ class gamePage extends React.Component {
                 <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
                 <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
                 <script type="text/babel" src="../js/board.js"></script>
-            </body>
-            <!--type="text/babel"-->
-            </html>
         );
     }
   }

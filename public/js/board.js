@@ -9,6 +9,7 @@ class LikeButton extends React.Component {
       this.state = { tela: 'Castelo_Phyton-Comeco_do_jogo' };
 
       this.changeTelaState = this.changeTelaState.bind(this);
+      this.handleChange= this.handleChange.bind(this);
     }
 
     changeTelaState(e) {
@@ -17,7 +18,7 @@ class LikeButton extends React.Component {
     }
   
     handleChange(e) {
-      this.setState({ value: e.target.value });
+      this.setState({ tela: e.target.value });
     } 
 
     render() {
@@ -26,13 +27,13 @@ class LikeButton extends React.Component {
           <center>
             <h1>Tela State = {this.state.tela}</h1>
              <img src="../imagens/Castelo_Phyton_da_Colina.jpg" /> 
-             <input defaultValue="0" id="my2" onChange={this.changeTelaState}></input>
+             <input defaultValue="0" id="my1" onClick={this.handleChange} ></input>
              <button onClick={this.changeTelaState}>test</button>
-              <p><a id="my1" href="javascript:CasteloPhyton1Button1();" >Bottom Text</a></p>
+              <p><a href="javascript:CasteloPhyton1Button1();" >Bottom Text</a></p>
           </center>   
         );
       }
-      
+
       if (this.state.tela == 'Trono_Castelo_Pyton-Comeco_do_jogo') {
        return (
           <center>

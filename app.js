@@ -8,6 +8,20 @@ const Usuario = require('./js/Usuario.js'); // pedindo requisição da classe us
 
 var bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({extended: true}));
+
+    const mysql = require('mysql');
+    const connection = mysql.createConnection({
+        host: 'localhost',
+        user : 'root',
+        password: '123456',
+        database: 'DsemD'
+    });
+
+    
+    connection.connect((err) => {
+        if (err) throw err;
+        console.log('Connected!');
+      });
 //para pegar as informações do corpo da aplicação (pegar os dados do form)
 
 /*var mysql = require('mysql'); // começo da comunicação com o banco de dados
@@ -95,4 +109,4 @@ var server = app.listen(process.env.PORT || 8080, function () {
   });
 
 
-//connetion.end();
+  connection.end();

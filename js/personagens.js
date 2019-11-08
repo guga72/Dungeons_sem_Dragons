@@ -83,6 +83,19 @@ function consumir(item){}
 function equipar(item){}
 
 
+function droparGold(personagem, personagemInimigo){
+    personagem.gold += personagemInimigo.gold;
+}
+
+function atacar(personagem, adversario){
+    if((adversario.vida -=  personagem.dano) < 0){
+        adversario.vida -= 0;
+    }
+    else{
+        adversario.vida -=  personagem.dano;
+    }
+}
+
 //Função que compõe os objetos de raça e classe ao personagem
 
 module.exports = {

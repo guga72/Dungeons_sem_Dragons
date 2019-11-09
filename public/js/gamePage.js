@@ -11,6 +11,78 @@ class gamePage extends React.Component {
   
     render() {
         return (
+            <div class="menu">
+                <h1 class="menu-titulo">Menu do Jogo</h1>
+                <div class="sessoes">
+                    <div class="sessao">
+                        NPCs
+                        <div class="item-sessao">Tiozinho</div>
+                        <div class="item-sessao">Nóia</div>
+                        <div class="item-sessao">Guerreiro Bolado</div>
+                    </div>
+                    
+                    <div class="sessao">
+                        Passagens
+                        <div class="item-sessao">Taberna do Bigode</div>
+                        <div class="item-sessao">Casa dos Caraglios</div>
+                        <div class="item-sessao">Castelo Doido</div>
+                    </div>
+                    <div class="sessao">
+                        Sessao
+                        <div class="item-sessao">c</div>
+                        <div class="item-sessao">d</div>
+                        <div class="item-sessao">e</div>
+                    </div>
+                    <div class="sessao">
+                        Sessao
+                        <div class="item-sessao">c</div>
+                        <div class="item-sessao">d</div>
+                        <div class="item-sessao">e</div>
+                    </div>
+                    
+                    <div class="sessao">
+                        Sessao
+                        <div class="item-sessao">c</div>
+                        <div class="item-sessao">d</div>
+                        <div class="item-sessao">e</div>
+                    </div>
+                    <div class="sessao">
+                        Sessao
+                        <div class="item-sessao">c</div>
+                        <div class="item-sessao">d</div>
+                        <div class="item-sessao">e</div>
+                    </div>
+                </div>
+                <div class="status-personagem">
+                    <h3 class="nome-personagem">Nome do Personagem</h3>
+                    <div class="statsbox">
+                        <h5>Vida:</h5>
+                        <h5>Ataque:</h5>
+                        <h5>Defesa:</h5>
+                        <h5>Magia</h5>
+                        <h5>Defesa Mágica:</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="game">
+                <div class="game-tela">
+                    <div class="imagem">
+                        <div class="caixa-dialogo">
+                            <h3>Tiozinho</h3>
+                            <p>Vai uma cocada aí, seu fiadaputa?</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="opcoes">
+                    <div class="opcoes-box">
+                        <div class="game-opcao">Comprar cocada</div>
+                        <div class="game-opcao">Roubar tiozinho</div>
+                        <div class="game-opcao">Matar o tiozinho</div>
+                        <div class="game-opcao">Pedir emprego pro tiozinho</div>
+                    </div>
+                </div>
+            </div>
+            /*
                 <label id="topEmail"></label>
                 <section class="hero is-black is-fullheight">
                     <div class="buttons">
@@ -65,6 +137,7 @@ class gamePage extends React.Component {
                 <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
                 <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
                 <script type="text/babel" src="../js/board.js"></script>
+                */
         );
     }
   }

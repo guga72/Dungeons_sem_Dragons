@@ -1,0 +1,156 @@
+*,
+*::after
+{
+    margin: 0;
+    padding: 0;
+
+}
+
+html 
+{
+    font-family: sans-serif;
+    background-color: #5f6769;
+
+}
+
+.menu
+{
+    position: absolute;
+    color: #dfcdc3;
+    top: 0;
+    width: 20%;
+    height: 90vh;
+    background-color: #3c4245;
+    display:inline-block;
+    margin: 5vh 0 5vh 5vh;
+    border-radius: 10px;
+}
+
+.menu-titulo
+{
+    text-align: center;
+    margin: 10px 0 10px 0;
+}
+
+.sessoes
+{
+    overflow: auto;
+    height: 50%;
+    padding: 10px;
+}
+
+.sessao
+{
+    margin-top: 10px;
+    height: auto;
+    width: 90%;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%);
+    display: block;
+}
+
+.item-sessao
+{
+    position: relative;
+    height: auto;
+    width: 80%;
+    display: block;
+    margin: 5px 0 5px 20%;
+}
+
+.game
+{
+    position: absolute;
+    left: 25%;
+    display: inline-block;
+    height: 100vh;
+    width: 75%;
+    background-color: #5f6769;
+}
+
+.game-tela
+{
+    position: relative;
+    top: 0;
+    height: 65vh;
+    width: 95%;
+    border: 1px solid yellow;
+    display: block;
+    background-color: gray;
+    margin: 5vh 0 5vh 0;
+    border-radius: 10px;
+
+}
+
+.imagem
+{
+    background-image: url('https://media.agoramt.com.br/2012/08/Tiozinho-da-barraquinha-de-doce.jpg');
+    background-size: cover;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 90%;
+    width: 75%;
+}
+
+.caixa-dialogo
+{
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.8);
+    width: 80%;
+    height: auto;
+    bottom: 10%;
+    left: 50%;
+    padding: 20px;
+    text-align: center;
+    transform: translateX(-50%);
+
+}
+
+.opcoes
+{
+    color: #3c4245;
+    height: 20vh;
+    border: 1px solid salmon;
+    width: 95%;
+    position: relative;
+    bottom: 0;
+    margin: 5vh 0 5vh 0;
+    background-color: gray;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.opcoes-box
+{
+    position: relative;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 75%;
+    overflow: auto;
+    height: 100%;
+    margin: 15px 0 15px 0;
+}
+
+.game-opcao
+{
+    display: block;
+    background-color: #dfcdc3;
+    margin: 5px 0 5px 0;
+    border-radius: 10px;
+}
+
+.statsbox
+{
+    text-align: center;
+    margin-top: 20px;
+}
+
+h3
+{
+    text-align: center;
+    margin: 10px 0 10px 0;
+}

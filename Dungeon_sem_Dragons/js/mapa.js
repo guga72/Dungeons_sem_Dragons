@@ -20,7 +20,7 @@ Fazer grafo:
 */
 
 function cenario(nome, atraiInimigos) {
-    return{
+    return {
         nome: nome,
         ligacoes: [],//[cenarios]
         npcs: [], //[npcs]
@@ -31,3 +31,9 @@ function cenario(nome, atraiInimigos) {
 
 const cenarioInicial = cenario('Cenário Inicial', false)
 const segundoCenario = cenario('Segundo Cenário', true)
+
+module.exports = {
+   cenario: cenario,
+   cenarioInicial: cenarioInicial,
+   segundoCenario: segundoCenario
+}

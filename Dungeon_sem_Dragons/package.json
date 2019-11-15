@@ -4,10 +4,11 @@
   "description": "Projeto 4 semestre",
   "main": "app.js",
   "scripts": {
-    "start": "nodemon app.js && npm run compile:sass",
+    "server": "nodemon app.js",
     "compile:sass": "node-sass public/bulma/bulma.sass public/bulma/css/bulma.css --watch",
     "test": "jest",
-    "test2": "cucumber-js"
+    "test2": "cucumber-js",
+    "start": "react-scripts start && npm run compile:sass"
   },
   "repository": {
     "type": "git",

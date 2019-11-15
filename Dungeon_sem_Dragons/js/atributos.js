@@ -8,7 +8,7 @@ function atributos(atk, mag, def, defm){
         ataque: atk,
         magia: mag,
         defesa: def,
-        defesam, defm
+        defesam: defm
     };
 }
 

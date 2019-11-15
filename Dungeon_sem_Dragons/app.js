@@ -1,4 +1,5 @@
-var express = require('express');
+const express = require('express');
+const favicon = require('express-favicon');
 var cookieParser = require('cookie-parser');
 const path = require('path')
 var app = express();

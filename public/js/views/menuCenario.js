@@ -1,7 +1,7 @@
 'use strict'
 
 const domContainer = document.querySelector('#main');
-const cenarios = require('../../js/mapa')
+const cenarios = require('../../../js/mapa')
 
 class menuCenario extends React.Component {
     constructor(props) {

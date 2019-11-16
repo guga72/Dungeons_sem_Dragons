@@ -1,8 +1,13 @@
 var express = require('express');
 var cookieParser = require('cookie-parser');
-const path = require('path')
+const path = require('path');
+const { createEngine } = require('express-react-views');
 var app = express();
 app.use(cookieParser());
+
+app.set('views', path.resolve('./public/js/views'));
+app.set('view engine', 'js');
+app.engine('js', createEngine());
 
 const Usuario = require('./js/Usuario.js'); // pedindo requisição da classe usuario
 
@@ -34,7 +39,7 @@ var connetion = mysql.createConnection({ // criando a comunicação com o
 });*/
 
 let usuarios = [];
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, './public')));
 var http = require('http');
 
 /*connetion.connect(function(err){
@@ -70,7 +75,7 @@ app.get('/public', function(req, res) {
     }
     
 }).get('/game-page', (req,res) =>{
-    res.sendFile(`${__dirname}/public/paginas/game-page.html`);
+    res.render('gamePage');
 }).post('/game-page', (req, res)=>{
     let email = req.body.email;
     let senha = req.body.senha;
@@ -94,8 +99,7 @@ app.get('/public', function(req, res) {
         else{
             console.log('cookie existente');
         }
-
-        res.sendFile(`${__dirname}/public/paginas/game-page.html`);
+        res.render('gamePage');
     }else{
         res.redirect('/login?errLogin=true');
     }

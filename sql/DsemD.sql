@@ -1,6 +1,36 @@
 create database DsemD;
 use DsemD;
-create table equipamentos(
+
+create table usuario(
+       email varchar(100) primary key,
+       senha varchar(100)
+);
+
+create table atributo(
+       id_atributo int,
+       ataque int,
+       defesa int,
+       defesa_magica int,
+       dano_magico int
+);
+
+create table personagem(
+       id_personagem int primary key,
+       usuario varchar(100),
+       nome_personagem varchar(100),
+       atributo int,
+       constraint fk_usuario foreign key (usuario) references usuario(email),
+       constraint fk_atributo1 foreign key (atributo) references atributo(id_atributo)
+);
+
+create table inventario(
+       personagem_fk int,
+       equipamento_fk int,
+       constraint fk_personagem foreign key (personagem_fk) references personagem (id_personagem),
+       constraint fk_equipamento foreign key (equipamento) references equipamento(nome_equi))
+);
+
+create table equipamento(
        tipo_equipamento varchar(25), -- machado, espada, escudo, cajado, adaga
        atributo int, -- atributos de atq, defesa, ou qualquer outro que ter� que ser ligado com outra tabela
        nome_equi varchar(25) primary key, -- nome do equipamento

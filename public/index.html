@@ -21,7 +21,7 @@
 
             <div class="container">
                 <div class="buttons">
-                    <a class="button is-success" href="paginas/login.html">Login</a>
+                    <a class="button is-success" href="/login">Login</a>
                     <a class="button is-danger" href="paginas/cadastro.html">Cadastro</a>
                 </div>
             </div>
@@ -31,7 +31,6 @@
   <script>
       window.onload = function(req, res){
             if ( document.cookie.includes("email=") != false){
-                console.log('fodasse');
                 location.pathname = '/game-page';
             }
         }

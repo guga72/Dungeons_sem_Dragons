@@ -1,16 +1,19 @@
 'use strict'
 
 const domContainer = document.querySelector('#main');
-const cenarios = require('../../js/mapa')
+const cenarios = require('../../../js/mapa')
 
 class gamePage extends React.Component {
     constructor(props) {
       super(props);
-      this.state = {tela: cenarioInicial};
+      this.state = {
+          tela: cenarioInicial
+        };
     }
   
     render() {
         return (
+            <div>
             <div class="menu">
                 <h1 class="menu-titulo">Menu do Jogo</h1>
                 <div class="sessoes">
@@ -81,6 +84,7 @@ class gamePage extends React.Component {
                         <div class="game-opcao">Pedir emprego pro tiozinho</div>
                     </div>
                 </div>
+            </div>
             </div>
             /*
                 <label id="topEmail"></label>

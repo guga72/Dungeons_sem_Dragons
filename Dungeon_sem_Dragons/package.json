@@ -4,11 +4,11 @@
   "description": "Projeto 4 semestre",
   "main": "app.js",
   "scripts": {
-    "start": "nodemon app.js && npm run compile:sass",
+    "server": "nodemon app.js",
     "compile:sass": "node-sass public/bulma/bulma.sass public/bulma/css/bulma.css --watch",
     "test": "jest",
     "test2": "cucumber-js",
-    "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\""
+    "start": "react-scripts start && npm run compile:sass"
   },
   "repository": {
     "type": "git",
@@ -31,7 +31,8 @@
     "mysql2": "^2.0.0",
     "node-sass": "^4.13.0",
     "react": "^16.12.0",
-    "react-dom": "^16.12.0"
+    "react-dom": "^16.12.0",
+    "react-router-dom": "^5.1.2"
   },
   "keywords": [],
   "devDependencies": {

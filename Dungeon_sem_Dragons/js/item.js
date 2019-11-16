@@ -18,30 +18,23 @@ const consumivel = (efeito) => {
     }
 }
 
-const equipavel = (atq, def, mag, magm) => {
+const itemEquipavel = (item, atq, def, mag, defm, eqpSlot) => {
+    atributosEquipavel = {
+        ataque: atq,
+        defesa: def,
+        magia: defm,
+        defesam: defm, 
+        eqpSlot:eqpSlot
+    }
     return Object.assign(
         item,
-        atributos.atributos(atq, mag, def, magm)
+        atributosEquipavel
     )
 }
 
 
-const comporItem = (item) => {
-    let csmv = {};
-    let eqpv = {};
-    if (item.equipavel == true){
-        csmv = consumivel();
-    }
-    if (item.equipavel == true){
-        eqpv = equipavel();
-    }
-    return Object.assign(
-        item,
-        csmv,
-        eqpv
-    );
-}
 
 module.exports = {
-    comporItem: comporItem,
+    item: item,
+    itemEquipavel: itemEquipavel
 }

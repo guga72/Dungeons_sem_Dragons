@@ -1,64 +1,66 @@
 'use strict'
 
-const domContainer = document.querySelector('#main');
+import React from 'react';
+import ReactDOM from 'react-dom';
+//const domContainer = document.querySelector('#main');
 const cenarios = require('../../../js/mapa')
 
 class gamePage extends React.Component {
     constructor(props) {
       super(props);
       this.state = {
-          tela: cenarioInicial
+          //tela: cenarioInicial
         };
     }
   
     render() {
         return (
             <div>
-            <div class="menu">
-                <h1 class="menu-titulo">Menu do Jogo</h1>
-                <div class="sessoes">
-                    <div class="sessao">
+            <div className="menu">
+                <h1 className="menu-titulo">Menu do Jogo</h1>
+                <div className="sessoes">
+                    <div className="sessao">
                         NPCs
-                        <div class="item-sessao">Tiozinho</div>
-                        <div class="item-sessao">Nóia</div>
-                        <div class="item-sessao">Guerreiro Bolado</div>
+                        <div className="item-sessao">Tiozinho</div>
+                        <div className="item-sessao">Nóia</div>
+                        <div className="item-sessao">Guerreiro Bolado</div>
                     </div>
                     
-                    <div class="sessao">
+                    <div className="sessao">
                         Passagens
-                        <div class="item-sessao">Taberna do Bigode</div>
-                        <div class="item-sessao">Casa dos Caraglios</div>
-                        <div class="item-sessao">Castelo Doido</div>
+                        <div className="item-sessao">Taberna do Bigode</div>
+                        <div className="item-sessao">Casa dos Caraglios</div>
+                        <div className="item-sessao">Castelo Doido</div>
                     </div>
-                    <div class="sessao">
+                    <div className="sessao">
                         Sessao
-                        <div class="item-sessao">c</div>
-                        <div class="item-sessao">d</div>
-                        <div class="item-sessao">e</div>
+                        <div className="item-sessao">c</div>
+                        <div className="item-sessao">d</div>
+                        <div className="item-sessao">e</div>
                     </div>
-                    <div class="sessao">
+                    <div className="sessao">
                         Sessao
-                        <div class="item-sessao">c</div>
-                        <div class="item-sessao">d</div>
-                        <div class="item-sessao">e</div>
+                        <div className="item-sessao">c</div>
+                        <div className="item-sessao">d</div>
+                        <div className="item-sessao">e</div>
                     </div>
                     
-                    <div class="sessao">
+                    <div className="sessao">
                         Sessao
-                        <div class="item-sessao">c</div>
-                        <div class="item-sessao">d</div>
-                        <div class="item-sessao">e</div>
+                        <div className="item-sessao">c</div>
+                        <div className="item-sessao">d</div>
+                        <div className="item-sessao">e</div>
                     </div>
-                    <div class="sessao">
+                    <div className="sessao">
                         Sessao
-                        <div class="item-sessao">c</div>
-                        <div class="item-sessao">d</div>
-                        <div class="item-sessao">e</div>
+                        <div className="item-sessao">c</div>
+                        <div className="item-sessao">d</div>
+                        <div className="item-sessao">e</div>
                     </div>
                 </div>
-                <div class="status-personagem">
-                    <h3 class="nome-personagem">Nome do Personagem</h3>
-                    <div class="statsbox">
+                <div className="status-personagem">
+                    <h3 className="nome-personagem">Nome do Personagem</h3>
+                    <div className="statsbox">
                         <h5>Vida:</h5>
                         <h5>Ataque:</h5>
                         <h5>Defesa:</h5>
@@ -67,60 +69,60 @@ class gamePage extends React.Component {
                     </div>
                 </div>
             </div>
-            <div class="game">
-                <div class="game-tela">
-                    <div class="imagem">
-                        <div class="caixa-dialogo">
+            <div className="game">
+                <div className="game-tela">
+                    <div className="imagem">
+                        <div className="caixa-dialogo">
                             <h3>Tiozinho</h3>
                             <p>Vai uma cocada aí, seu fiadaputa?</p>
                         </div>
                     </div>
                 </div>
-                <div class="opcoes">
-                    <div class="opcoes-box">
-                        <div class="game-opcao">Comprar cocada</div>
-                        <div class="game-opcao">Roubar tiozinho</div>
-                        <div class="game-opcao">Matar o tiozinho</div>
-                        <div class="game-opcao">Pedir emprego pro tiozinho</div>
+                <div className="opcoes">
+                    <div className="opcoes-box">
+                        <div className="game-opcao">Comprar cocada</div>
+                        <div className="game-opcao">Roubar tiozinho</div>
+                        <div className="game-opcao">Matar o tiozinho</div>
+                        <div className="game-opcao">Pedir emprego pro tiozinho</div>
                     </div>
                 </div>
             </div>
             </div>
             /*
                 <label id="topEmail"></label>
-                <section class="hero is-black is-fullheight">
-                    <div class="buttons">
-                        <div id="emailuser" class="button is-dark"></div>
-                        <div class="button is-dark">b</div>
-                        <div class="button is-dark">c</div>
-                        <div class="button is-dark">d</div>
+                <section className="hero is-black is-fullheight">
+                    <div className="buttons">
+                        <div id="emailuser" className="button is-dark"></div>
+                        <div className="button is-dark">b</div>
+                        <div className="button is-dark">c</div>
+                        <div className="button is-dark">d</div>
                     </div>
-                    <div class="tile is-ancestor">
-                        <div class="tile is-vertical is-2">
-                            <div class="tile is-parent is-vertical">
-                                <article class="tile is-child notification is-dark">
+                    <div className="tile is-ancestor">
+                        <div className="tile is-vertical is-2">
+                            <div className="tile is-parent is-vertical">
+                                <article className="tile is-child notification is-dark">
 
                                 <menuCenario/>
                                 </article>
                             </div>
                         </div>
-                        <div class="tile is-vertical is-8">
-                            <div class="tile is-parent">
-                                <article class="tile is-child notification is-danger">
-                                    <p class="title">Tela do Jogo</p>
-                                    <p class="subtitle">Aqui vão as imagens do jogo</p>
-                                    <div class="main" id="main">
+                        <div className="tile is-vertical is-8">
+                            <div className="tile is-parent">
+                                <article className="tile is-child notification is-danger">
+                                    <p className="title">Tela do Jogo</p>
+                                    <p className="subtitle">Aqui vão as imagens do jogo</p>
+                                    <div className="main" id="main">
                                         <!-- Content -->
                                     </div>
                                 </article>
                             </div>
                         </div>
-                        <div class="tile is-parent">
-                            <article class="tile is-child notification is-dark">
-                                <div class="content">
-                                    <p class="title">Outras Opções</p>
-                                    <p class="subtitle">With even more content</p>
-                                    <div class="content">
+                        <div className="tile is-parent">
+                            <article className="tile is-child notification is-dark">
+                                <div className="content">
+                                    <p className="title">Outras Opções</p>
+                                    <p className="subtitle">With even more content</p>
+                                    <div className="content">
 
                                     </div>
                                 </div>
@@ -146,4 +148,5 @@ class gamePage extends React.Component {
     }
   }
 
-  ReactDOM.render(<gamePage />, domContainer);
+  export default gamePage;
+  //ReactDOM.render(<gamePage />, domContainer);

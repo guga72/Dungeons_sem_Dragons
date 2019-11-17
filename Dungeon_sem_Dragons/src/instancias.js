@@ -1,4 +1,4 @@
-const Cenarios = require('./mapa');
+const Cenarios = require('./gamefiles/mapa');
 
 const cenarioInicial = Cenarios.cenario('Cenário Inicial', false, './img/cenarioInicial.jpg');
 const segundoCenario = Cenarios.cenario('Segundo Cenário', true, './img/cenario2teste.jpg');

@@ -1,15 +1,38 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import cenarioInicial from './gamefiles/instancias'
+import cenarioInicial from './instancias'
+import { throwStatement } from '@babel/types';
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-        tela: cenarioInicial
+        cenario: cenarioInicial
       };
+    this.criarSessaoNPCs = this.criarSessaoNPCs.bind(this);
+    this.criarSessaoLigacoes = this.criarSessaoLigacoes.bind(this);
   }
+
+  criarSessaoNPCs() {
+      /*
+      let c = this.cenario
+      if(c.npcs.length > 0){
+        let listanpc = [];
+        for(let i in this.cenario.npcs){
+        listanpc.push(<div className="item-sessao">{i.nome}</div>)
+      }
+
+      */
+      }
+
+  criarSessaoLigacoes() {/*
+    let c = this.cenario
+    if(c.ligacoes.length > 0){
+      let listaligacoes = [];
+      for(let i in this.cenario.ligacoes){
+      listaligacoes.push(<div className="item-sessao">{i.nome}</div>)
+      */}
 
   render() {
     return (
@@ -18,17 +41,23 @@ class App extends React.Component {
                   <h1 className="menu-titulo">Menu do Jogo</h1>
                   <div className="sessoes">
                       <div className="sessao">
-                          NPCs
-                          <div className="item-sessao">Tiozinho</div>
-                          <div className="item-sessao">Nóia</div>
-                          <div className="item-sessao">Guerreiro Bolado</div>
+                        NPCs
+                          {/*{this.criarSessaoNPCs()}*/}
                       </div>
                       
                       <div className="sessao">
                           Passagens
-                          <div className="item-sessao">Taberna do Bigode</div>
-                          <div className="item-sessao">Casa dos Caraglios</div>
-                          <div className="item-sessao">Castelo Doido</div>
+                          {/*this.criarSessaoLigacoes()*/}
+
+                          {
+                          
+                          
+                          /*
+                              <div className="item-sessao">Taberna do Bigode</div>
+                              <div className="item-sessao">Casa dos Caraglios</div>
+                              <div className="item-sessao">Castelo Doido</div>
+                            */
+                          }
                       </div>
                       <div className="sessao">
                           Sessao

@@ -1,38 +1,38 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import cenarioInicial from './instancias'
+import cenarios from './instancias'
 import { throwStatement } from '@babel/types';
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-        cenario: cenarioInicial
+        cenario: cenarios.cenarioInicial
       };
     this.criarSessaoNPCs = this.criarSessaoNPCs.bind(this);
     this.criarSessaoLigacoes = this.criarSessaoLigacoes.bind(this);
   }
 
-  criarSessaoNPCs() {
-      /*
-      let c = this.cenario
+  criarSessaoNPCs(){
+      
+      let c = this.cenario;
       if(c.npcs.length > 0){
         let listanpc = [];
         for(let i in this.cenario.npcs){
-        listanpc.push(<div className="item-sessao">{i.nome}</div>)
+        listanpc.push(<div className="item-sessao">{i.nome}</div>);
+        }
       }
-
-      */
-      }
-
-  criarSessaoLigacoes() {/*
+}
+  criarSessaoLigacoes() {
     let c = this.cenario
     if(c.ligacoes.length > 0){
       let listaligacoes = [];
       for(let i in this.cenario.ligacoes){
       listaligacoes.push(<div className="item-sessao">{i.nome}</div>)
-      */}
+      }
+    }
+  }
 
   render() {
     return (
@@ -42,7 +42,7 @@ class App extends React.Component {
                   <div className="sessoes">
                       <div className="sessao">
                         NPCs
-                          {/*{this.criarSessaoNPCs()}*/}
+                          {this.criarSessaoNPCs()}
                       </div>
                       
                       <div className="sessao">
@@ -98,7 +98,7 @@ class App extends React.Component {
               </div>
               <div className="game">
                   <div className="game-tela">
-                      <div className="imagem" style={{backgroundImage: 'url('+cenarioInicial.background+')'}}>
+                      <div className="imagem" style={{backgroundImage: 'url('+ cenarios.cenarioInicial.background+')'}}>
                           <div className="caixa-dialogo">
                               <h3>Tiozinho</h3>
                               <p>Vai uma cocada aí, seu fiadaputa?</p>

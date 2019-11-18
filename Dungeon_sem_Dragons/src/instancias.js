@@ -6,3 +6,10 @@ const segundoCenario = Cenarios.cenario('Segundo Cenário', true, './img/cenario
 cenarioInicial.ligacoes.push(segundoCenario)
 
 segundoCenario.ligacoes.push(cenarioInicial)
+
+const cenarios = {
+    cenarioInicial,
+    segundoCenario
+}
+
+export default cenarios;

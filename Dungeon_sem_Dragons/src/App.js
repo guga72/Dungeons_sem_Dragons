@@ -10,31 +10,31 @@ class App extends React.Component {
     this.state = {
         cenario: cenarios.cenarioInicial
       };
+
     this.criarSessaoNPCs = this.criarSessaoNPCs.bind(this);
     this.criarSessaoLigacoes = this.criarSessaoLigacoes.bind(this);
   }
 
   criarSessaoNPCs(){
       
-      let c = this.cenario;
-      if(c.npcs.length > 0){
-        let listanpc = [];
-        for(let i in this.cenario.npcs){
-        listanpc.push(<div className="item-sessao">{i.nome}</div>);
-        }
+      let c = this.state.cenario;
+      let listanpc = [];
+      for(let i in c.npcs){
+        listanpc.push(<li className="item-sessao">{i.nome}</li>)
       }
+
+      return listanpc;
 }
-  criarSessaoLigacoes() {
-    let c = this.cenario
-    if(c.ligacoes.length > 0){
-      let listaligacoes = [];
-      for(let i in this.cenario.ligacoes){
-      listaligacoes.push(<div className="item-sessao">{i.nome}</div>)
+  criarSessaoLigacoes(){
+    let c = this.state.cenario
+    let listaligacoes = [];
+    for(let i in c.ligacoes){
+      listaligacoes.push(<li className="item-sessao">{i.nome}</li>)
       }
-    }
+    return listaligacoes;
   }
 
-  render() {
+  render(){
     return (
       <div className="App">
               <div className="menu">
@@ -42,15 +42,19 @@ class App extends React.Component {
                   <div className="sessoes">
                       <div className="sessao">
                         NPCs
+                        <ul>
                           {this.criarSessaoNPCs()}
+                        </ul>
+                          
                       </div>
                       
                       <div className="sessao">
                           Passagens
-                          {/*this.criarSessaoLigacoes()*/}
+                          <ul>
+                          {this.criarSessaoLigacoes()}
+                          </ul>
 
                           {
-                          
                           
                           /*
                               <div className="item-sessao">Taberna do Bigode</div>
@@ -98,7 +102,7 @@ class App extends React.Component {
               </div>
               <div className="game">
                   <div className="game-tela">
-                      <div className="imagem" style={{backgroundImage: 'url('+ cenarios.cenarioInicial.background+')'}}>
+                      <div className="imagem" style={{backgroundImage: 'url('+ this.state.cenario.background+')'}}>
                           <div className="caixa-dialogo">
                               <h3>Tiozinho</h3>
                               <p>Vai uma cocada aí, seu fiadaputa?</p>

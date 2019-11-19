@@ -24,6 +24,11 @@ function personagemJogador(nome, sexo){
     return {
         nome:nome,
         sexo: sexo,
+        vida: 100,
+        ataque: 1,
+        defesa: 1,
+        magia: 1,
+        defesaM: 1,
         inventario: [],
         max_peso: 50,
         gold: 1,

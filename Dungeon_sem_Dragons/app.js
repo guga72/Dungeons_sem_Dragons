@@ -1,16 +1,15 @@
 const express = require('express');
-const favicon = require('express-favicon');
 var cookieParser = require('cookie-parser');
 const path = require('path');
 const { createEngine } = require('express-react-views');
 var app = express();
 app.use(cookieParser());
 
-app.set('views', path.resolve('./public/js/views'));
+app.set('views', path.resolve('./src/gamefiles'));
 app.set('view engine', 'js');
 app.engine('js', createEngine());
 
-const Usuario = require('./js/Usuario.js'); // pedindo requisição da classe usuario
+const Usuario = require('./src/gamefiles/Usuario'); // pedindo requisição da classe usuario
 
 var bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({extended: true}));
@@ -48,12 +47,12 @@ var http = require('http');
     console.log('conectou!');
   });*/
 
-app.get('/public', function(req, res) {
-    res.sendFile('index.html');
+app.get('/', function(req, res) {
+    res.sendFile(`${__dirname}/public/paginas-html/index.html`);
 }).get('/cadastro', (req, res) =>{
-    res.sendFile(`${__dirname}/public/paginas/cadastro.html`);
+    res.sendFile(`${__dirname}/public/paginas-html/cadastro.html`);
 }).get('/login', (req, res)=>{
-    res.sendFile(`${__dirname}/public/paginas/login.html`);
+    res.sendFile(`${__dirname}/public/paginas-html/login.html`);
 }).post('/login', (req, res)=>{
    
     let reqBody = req.body;
@@ -70,7 +69,7 @@ app.get('/public', function(req, res) {
     if(isNotCadastrado){
         usuarios.push(novoUser);
         console.log(usuarios);
-        res.sendFile(`${__dirname}/public/paginas/login.html`);
+        res.sendFile(`${__dirname}/public/paginas-html/login.html`);
     }else{
         res.redirect('/cadastro?errCad=true');
     }

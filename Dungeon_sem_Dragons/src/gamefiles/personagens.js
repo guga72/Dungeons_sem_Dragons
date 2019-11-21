@@ -31,7 +31,7 @@ function personagemJogador(nome, sexo){
         defesaM: 1,
         inventario: [],
         max_peso: 50,
-        gold: 1,
+        gold: 0,
         usarItem: usarItem,
         level: 1,
         eqp: {
@@ -97,18 +97,31 @@ function usarItem(item){
 function consumir(item){}
 function equipar(item){}
 
+function levelup(personagem){
+    personagem.ataque += 1;
+    personagem.defesa += 1;
+    personagem.defesaM += 1;
+    personagem.level += 1;
+}
+
 
 function droparGold(personagem, personagemInimigo){
     personagem.gold += personagemInimigo.gold;
 }
 
+
 function atacar(personagem, adversario){
-    if((adversario.vida -=  personagem.dano) < 0){
+    if((personagem.dano - adversario.defesa) < 0){
         adversario.vida -= 0;
     }
     else{
         adversario.vida -=  personagem.dano;
     }
+}
+
+//função de descanso
+function descansar(personagem){
+    personagem.vida = 100;
 }
 
 //Função que compõe os objetos de raça e classe ao personagem

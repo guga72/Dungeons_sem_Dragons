@@ -8,6 +8,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+        mostrarLogin: true,
         cenario: cenarios.cenarioInicial
       };
 
@@ -37,7 +38,7 @@ class App extends React.Component {
   render(){
     return (
       <div className="App">
-              <LoginModal />
+              <>{this.state.mostrarLogin ? <LoginCadastro /> : null}</>
               <div className="menu">
                   <h1 className="menu-titulo">Menu do Jogo</h1>
                   <div className="sessoes">

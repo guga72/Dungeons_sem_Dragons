@@ -37,6 +37,7 @@ class App extends React.Component {
   render(){
     return (
       <div className="App">
+              <LoginModal />
               <div className="menu">
                   <h1 className="menu-titulo">Menu do Jogo</h1>
                   <div className="sessoes">

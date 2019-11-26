@@ -1,0 +1,124 @@
+*
+{
+  margin: 0;
+	padding: 0;
+	border: 0;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+html
+{
+  font-size: 62.5%;
+
+}
+
+body
+{
+    background-image: url('./resources/802560.jpg');
+    background-size: cover;
+}
+
+.modal-bg
+{
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal
+{   
+    position: fixed;
+    height: 60%;
+    width:60%;
+    background-color: rgb(255, 255, 255);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50px;
+}
+
+.boxes
+{
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 80%;
+}
+
+.login-box
+{
+  border-right: 1px solid grey;
+  left: 0;
+}
+
+.cadastro-box
+{
+  position: absolute;
+  right: 0;
+}
+
+.login-cadastro-box
+{
+  display: inline-block;
+  height: 100%;
+  width: 49.9%;
+}
+
+.login-cadastro-box h3
+{
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 10rem;
+  color: grey;
+}
+
+.login-cadastro-box input
+{
+  display:block;
+
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+
+  height: 2.5rem;
+  border-radius: 5px;
+
+  font-size: 2rem;
+  text-align: center;
+
+  margin-bottom: 2rem;
+
+  /*Sombra do Input:*/
+  -webkit-box-shadow: 2px 3px 16px -3px rgba(0,0,0,0.75);
+  -moz-box-shadow: 2px 3px 16px -3px rgba(0,0,0,0.75);
+  box-shadow: 2px 3px 16px -3px rgba(0,0,0,0.75);
+}
+
+.login-cadastro-box button 
+{
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 3rem;
+  width: 8rem;
+  font-size: 1.5rem;
+  color: white;
+  border-radius: 10px;
+  padding: 1rem;
+  text-align: center;
+  line-height: 50%;
+}
+
+.cadastro-button
+{
+  background-color:#eb213c
+}
+
+.login-button
+{
+  background-color: #21eb54;
+}

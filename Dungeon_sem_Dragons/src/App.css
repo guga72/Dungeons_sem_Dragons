@@ -87,7 +87,6 @@ html
     top: 0;
     height: 65vh;
     width: 95%;
-    border: 1px solid yellow;
     display: block;
     background-color: gray;
     margin: 5vh 0 5vh 0;
@@ -125,7 +124,6 @@ html
 {
     color: #3c4245;
     height: 20vh;
-    border: 1px solid salmon;
     width: 95%;
     position: relative;
     bottom: 0;
@@ -143,8 +141,9 @@ html
     transform: translate(-50%, -50%);
     width: 75%;
     overflow: auto;
-    height: 100%;
+    height: auto;
     margin: 15px 0 15px 0;
+    
 }
 
 .game-opcao

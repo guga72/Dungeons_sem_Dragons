@@ -10,12 +10,23 @@ class App extends React.Component {
     this.state = {
       mostrarLogin: true
     }
+
+    this.loginModalHandler = this.loginModalHandler.bind(this);
   }
+
+  loginModalHandler = () => (
+    this.setState(
+      {
+        mostrarLogin: false
+      }
+    )
+  )
+
 
   render(){
     return (
       <div className="App">
-        <>{this.state.mostrarLogin ? <LoginCadastro /> : null}</>
+        <>{this.state.mostrarLogin ? <LoginCadastro loginModalHandler= {this.loginModalHandler}/> : null}</>
         <TelaJogo />
       </div>
     );

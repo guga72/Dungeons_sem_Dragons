@@ -14,15 +14,15 @@ export default class LoginCadastro extends React.Component {
                         <div class="boxes">
                             <div class="login-box login-cadastro-box">
                                 <h3>Login</h3>
-                                <form>
+                                <form action="#">
                                     <input type="email" placeholder='email'/>
                                     <input type="password" placeholder='senha'/>
-                                    <button class="login-button" type="submit">Login</button>
+                                    <button onClick={this.props.loginModalHandler} class="login-button" type="submit">Login</button>
                                 </form>
                             </div>
                             <div class="cadastro-box login-cadastro-box">
                                 <h3>Cadastro</h3>
-                                <form>
+                                <form action="#">
                                     <input type="email" placeholder='email'/>
                                     <input type="password" placeholder='senha'/>
                                     <button class="cadastro-button" type="submit">Cadastrar</button>

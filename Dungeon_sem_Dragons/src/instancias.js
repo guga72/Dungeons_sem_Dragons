@@ -23,5 +23,3 @@ const cenarios = {
     cenarioInicial,
     segundoCenario
 }
-
-export default cenarios;

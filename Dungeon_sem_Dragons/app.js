@@ -11,7 +11,7 @@ const Usuario = require('./src/gamefiles/Usuario'); // pedindo requisição da c
 var bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({extended: true}));
 
-    /*const mysql = require('mysql');
+    const mysql = require('mysql');
     const connection = mysql.createConnection({
         host: 'localhost',
         user : 'root',
@@ -23,7 +23,7 @@ app.use(bodyParser.urlencoded({extended: true}));
     connection.connect((err) => {
         if (err) throw err;
         console.log('Connected!');
-      });*/
+      });
 
 
 //para pegar as informações do corpo da aplicação (pegar os dados do form)

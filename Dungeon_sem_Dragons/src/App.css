@@ -32,7 +32,7 @@ html
     background-color: #3c4245;
     display:inline-block;
     margin: 5vh 0 5vh 5vh;
-    border-radius: 10px;
+    border-radius: 1rem;
     font-size: 2rem;
 }
 
@@ -47,12 +47,12 @@ html
 {
     overflow: auto;
     height: 50%;
-    padding: 10px;
+    padding: 1rem;
 }
 
 .sessao
 {
-    margin-top: 10px;
+    margin-top: 1rem;
     height: auto;
     width: 90%;
     position: relative;
@@ -114,7 +114,7 @@ html
     height: auto;
     bottom: 10%;
     left: 50%;
-    padding: 20px;
+    padding: 2rem;
     text-align: center;
     transform: translateX(-50%);
 
@@ -150,7 +150,7 @@ html
 {
     display: block;
     background-color: #dfcdc3;
-    margin: 5px 0 5px 0;
+    margin: .5rem 0 .5rem 0;
     border-radius: 10px;
 }
 
@@ -158,6 +158,7 @@ html
 {
     text-align: center;
     margin-top: 20px;
+    overflow: auto;
 }
 
 h3

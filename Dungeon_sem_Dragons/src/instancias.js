@@ -2,9 +2,10 @@ const Cenarios = require('./gamefiles/mapa');
 const Npcs = require('./gamefiles/npc')
 const Personagens = require('./gamefiles/personagens');
 
-const persona = Personagens.personagemJogador("Nome do Personagem", "Masculino");
+const persona = Personagens.personagemJogador("Orgh", "Não, obrigado");
+const oba = Personagens.comporPersonagemJogador(persona, "Orc", "Evangélico");
 
-const cenarioInicial = Cenarios.cenario('TESTE NOME CENARIOINICIAL', false, './img/cenarioInicial.jpg');
+const cenarioInicial = Cenarios.cenario('Cenário Inicial', false, './img/cenarioInicial.jpg');
 const segundoCenario = Cenarios.cenario('Segundo Cenário', true, './img/cenario2teste.jpg');
 
 const npc1 = Npcs.npc("Teste de NPC 1", "Teste dialogo NPC 1", ["Teste de Resposta 1", "Teste de resposta 2"]);
@@ -21,5 +22,8 @@ segundoCenario.ligacoes.push(cenarioInicial)
 
 const cenarios = {
     cenarioInicial,
-    segundoCenario
+    segundoCenario,
+    oba
 }
+
+export default cenarios;

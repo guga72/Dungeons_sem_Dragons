@@ -4,10 +4,7 @@ const path = require('path');
 const { createEngine } = require('express-react-views');
 var app = express();
 app.use(cookieParser());
-
-app.set('views', path.resolve('./src/gamefiles'));
-app.set('view engine', 'js');
-app.engine('js', createEngine());
+app.use(express.static(path.join(__dirname, 'public')));
 
 const Usuario = require('./src/gamefiles/Usuario'); // pedindo requisição da classe usuario
 
@@ -42,12 +39,22 @@ let usuarios = [];
 app.use(express.static(path.join(__dirname, './public')));
 var http = require('http');
 
+app.get('/api/paginaInicial', (req, res) =>{
+    var list = ["item1", "item2", "item3"];
+    res.json(list);
+    console.log("Eviou os itens");
+});
+
+app.get('*', (req,res) =>{
+    res.sendFile(path.join(__dirname + '/public/index.html'));
+});
+
 /*connetion.connect(function(err){
     if(err) return console.log(err);
     console.log('conectou!');
   });*/
 
-app.get('/', function(req, res) {
+/*app.get('/', function(req, res) {
     res.sendFile(`${__dirname}/public/paginas-html/index.html`);
 }).get('/cadastro', (req, res) =>{
     res.sendFile(`${__dirname}/public/paginas-html/cadastro.html`);
@@ -109,10 +116,14 @@ app.get('/', function(req, res) {
 app.listen(port, function() {
     console.log('Our app is running on http://localhost:' + port);
 });*/
-var server = app.listen(process.env.PORT || 8080, function () {
+const port = process.env.PORT || 8080;
+app.listen(port);
+console.log("App now running on port", port);
+
+/*var server = app.listen(process.env.PORT || 8080, function () {
     var port = server.address().port;
     console.log("App now running on port", port);
-  });
+  });*/
 
 
   //connection.end();

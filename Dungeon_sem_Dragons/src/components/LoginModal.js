@@ -4,7 +4,6 @@ import './LoginModal.css'
 export default class LoginCadastro extends React.Component {
     constructor(props){
         super(props);
-
     }
 
     render(){

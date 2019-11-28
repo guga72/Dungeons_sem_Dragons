@@ -7,7 +7,6 @@ export default class Menu extends React.Component {
         super(props);
 
         this.state = {
-            //usuario: false,
             cenario: cenarios.cenarioInicial,
             personagem: cenarios.oba
           };
@@ -15,22 +14,6 @@ export default class Menu extends React.Component {
         this.criarSessaoNPCs = this.criarSessaoNPCs.bind(this);
         //this.criarSessaoLigacoes = this.criarSessaoLigacoes.bind(this);
     }
-
-/*componentDidMount(){
-      this.getUsuario();
-    }
-
-
-    getUsuario = () =>{
-      /*fetch('*')
-      .then(res => res.json())
-<<<<<<< HEAD
-      .then(usuario)*/
-    };
-=======
-      .then(usuario)
-    };*/
->>>>>>> 4abd160b2301d99d7308dbcfb2f0e20f77e68c73
 
     criarSessaoNPCs(){
       

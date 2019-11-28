@@ -7,7 +7,7 @@ export default class Menu extends React.Component {
         super(props);
 
         this.state = {
-            usuario: false,
+            //usuario: false,
             cenario: cenarios.cenarioInicial,
             personagem: cenarios.oba
           };
@@ -22,9 +22,9 @@ componentDidMount(){
 
 
     getUsuario = () =>{
-      fetch('*')
+      /*fetch('*')
       .then(res => res.json())
-      .then(usuario)
+      .then(usuario)*/
     };
 
     criarSessaoNPCs(){

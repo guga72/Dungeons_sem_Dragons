@@ -17,7 +17,7 @@ export default class LoginCadastro extends React.Component {
                                 <form action="#">
                                     <input type="email" placeholder='email'/>
                                     <input type="password" placeholder='senha'/>
-                                    <button onClick={this.props.loginModalHandler} class="login-button" type="submit">Login</button>
+                                    <button onClick={this.props.loginModalHandler} class="botao login-button" type="submit">Login</button>
                                 </form>
                             </div>
                             <div class="cadastro-box login-cadastro-box">
@@ -25,7 +25,7 @@ export default class LoginCadastro extends React.Component {
                                 <form action="#">
                                     <input type="email" placeholder='email'/>
                                     <input type="password" placeholder='senha'/>
-                                    <button class="cadastro-button" type="submit">Cadastrar</button>
+                                    <button class="botao cadastro-button" type="submit">Cadastrar</button>
                                 </form>
                             </div>
                         </div>

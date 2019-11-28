@@ -28,6 +28,11 @@ body
     z-index: 2;
 }
 
+.modal2
+{
+  z-index: 1;
+}
+
 .modal
 {   
     position: fixed;
@@ -77,7 +82,7 @@ body
   color: grey;
 }
 
-.login-cadastro-box input
+.login-cadastro-box input, .input2
 {
   display:block;
 
@@ -99,7 +104,7 @@ body
   box-shadow: 2px 3px 16px -3px rgba(0,0,0,0.75);
 }
 
-.login-cadastro-box button 
+.botao
 {
   position: relative;
   left: 50%;
@@ -122,4 +127,28 @@ body
 .login-button
 {
   background-color: #21eb54;
+}
+
+
+.form-box
+{
+  position: relative;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 20%;
+  height: 60%;
+  padding: 10rem;
+  font-size: 2rem;
+}
+
+.form-box button, .form-box form
+{
+  display: block;
+  text-align: center;
+}
+
+.form-box input, .form-box select, .form-box .botao
+{
+  margin: 1rem;
 }

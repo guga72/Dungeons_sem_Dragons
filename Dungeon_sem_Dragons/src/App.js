@@ -17,13 +17,24 @@ class App extends React.Component {
     this.criacaoCharHandler = this.criacaoCharHandler.bind(this);
   }
 
-  loginModalHandler = () => (
+  /*loginModalHandler = () => (
     this.setState(
       {
         mostrarLogin: false
       }
     )
-  )
+  )*/
+
+  componentDidMount(){
+    this.getCookie();
+  }
+
+
+  getCookie = () =>{
+    fetch('/paginaInicial')
+    .then(res => res.json())
+    .then(res => this.setState({mostrarLogin : res.mostrarLogin}))
+  };
 
   criacaoCharHandler = () => (
     this.setState(

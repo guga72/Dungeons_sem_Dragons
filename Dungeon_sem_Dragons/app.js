@@ -9,50 +9,33 @@ app.use(express.static(path.join(__dirname, 'public')));
 var bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({extended: true}));
 
-    const mysql = require('mysql');
+    /*const mysql = require('mysql');
     const connection = mysql.createConnection({
         host: 'localhost',
         user : 'root',
         password: '',
         database: 'DsemD'
-    });
-
-    const express = require('express');
-var cookieParser = require('cookie-parser');
-const path = require('path');
-const { createEngine } = require('express-react-views');
-var app = express();
-app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
-
-var bodyParser = require('body-parser');
-app.use(bodyParser.urlencoded({extended: true}));
-
-    const mysql = require('mysql');
-    const connection = mysql.createConnection({
-        host: 'localhost',
-        user : 'root',
-        password: '',
-        database: 'DsemD'
-    });
+    });*/
 
     
-    connection.connect((err) => {
+    /*connection.connect((err) => {
         if (err) throw err;
         console.log('Connected!');
-      });
+      });*/
 
 let usuarios = [];
 app.use(express.static(path.join(__dirname, './public')));
 var http = require('http');
 
-app.get('/api/paginaInicial', (req, res) =>{
-    var list = ["item1", "item2", "item3"];
-    res.json(list);
-    console.log("Eviou os itens");
+app.get('/paginaInicial', (req, res) => {
+    if(req.cookies.email == undefined){
+        res.json(mostrarLogin = {mostrarLogin : true});
+    }
+    res.json(mostrarLogin = {mostrarLogin: false})
 });
 
-app.get('*', (req,res) =>{
+
+app.get('/login', (req,res) =>{
     let email = req.body.email;
     let senha = req.body.senha;
     var isValidUser = false;
@@ -107,4 +90,4 @@ const port = process.env.PORT || 8080;
 app.listen(port);
 console.log("App now running on port", port);
 
-  connection.end();
+  //connection.end();

@@ -16,7 +16,7 @@ export default class Menu extends React.Component {
         //this.criarSessaoLigacoes = this.criarSessaoLigacoes.bind(this);
     }
 
-componentDidMount(){
+/*componentDidMount(){
       this.getUsuario();
     }
 
@@ -24,8 +24,13 @@ componentDidMount(){
     getUsuario = () =>{
       /*fetch('*')
       .then(res => res.json())
+<<<<<<< HEAD
       .then(usuario)*/
     };
+=======
+      .then(usuario)
+    };*/
+>>>>>>> 4abd160b2301d99d7308dbcfb2f0e20f77e68c73
 
     criarSessaoNPCs(){
       

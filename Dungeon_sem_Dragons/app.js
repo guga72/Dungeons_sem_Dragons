@@ -89,7 +89,7 @@ app.post('/cadastro', (req, res) => {
     });
 
     let post = {email: req.body.email , senha: req.body.senha};
-    let sql = 'INSERT INTO nomeTabela SET ?';
+    let sql = 'INSERT INTO usuarip SET ?';
     let query = db.query(sql, post, (err, result) =>{
         if(err) throw err;
         console.log(result);
@@ -99,12 +99,18 @@ app.post('/cadastro', (req, res) => {
                 expires: new Date(Date.now()+10000),
                 path: '/' });
             console.log('cookie criado');
-    res.sendFile(path.join(__dirname + '/public/index.html'));
             }
 });
 });
 
-
+app.delete('/deletePersonagem', (req, res) =>{
+    let deletar = {email: req.email, persoangem : req.personagem};
+    let sql = 'DELETE FROM personagem WHERE';
+    let query = db.query(sql, deletar);
+    res.json(deletar = {
+        morrer : "Você morreu"
+    });
+});
 
 const port = process.env.PORT || 8080;
 app.listen(port);

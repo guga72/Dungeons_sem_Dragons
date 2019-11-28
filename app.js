@@ -26,6 +26,10 @@ let usuarios = [];
 app.use(express.static(path.join(__dirname, './public')));
 var http = require('http');
 
+app.get('/', (req, res) =>{
+    res.send('root route');
+});
+
 app.get('/paginaInicial', (req, res) => {
     if(req.cookies.email == undefined){
         res.json(mostrarLogin = {mostrarLogin : true});

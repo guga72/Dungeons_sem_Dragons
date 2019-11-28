@@ -12,7 +12,7 @@ class App extends React.Component {
       mostrarLogin: true,
       temChar: false
     }
-
+    this.connectToServer = this.connectToServer.bind(this);
     this.loginModalHandler = this.loginModalHandler.bind(this);
     this.criacaoCharHandler = this.criacaoCharHandler.bind(this);
   }
@@ -26,9 +26,14 @@ class App extends React.Component {
   )*/
 
   componentDidMount(){
+    this.connectToServer();
     this.getCookie();
   }
 
+
+  connectToServer = () =>{
+    fetch('/');
+  }
 
   getCookie = () =>{
     fetch('/paginaInicial')

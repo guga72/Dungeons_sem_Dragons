@@ -34,6 +34,10 @@ app.get('/paginaInicial', (req, res) => {
     res.json(mostrarLogin = {mostrarLogin: false})
 });
 
+app.get('/logout'), (req,res) =>{
+    res.clearCookie('email', {path : '/'}) ;
+}
+
 
 app.get('/login', (req,res) =>{
     let email = req.body.email;
@@ -56,10 +60,12 @@ app.get('/login', (req,res) =>{
                 expires: new Date(Date.now()+10000),
                 path: '/' });
             console.log('cookie criado');
-    res.sendFile(path.join(__dirname + '/public/index.html'));
+            res.json(login = {
+                login : true
+            })
             }
         }
-        res.json(erro = {
+        res.json(login = {
             errorLogin : "Usuario ou senha incorretos"
         });
 });
@@ -67,6 +73,20 @@ app.get('/login', (req,res) =>{
 app.post('/cadastro', (req, res) => {
     var email = req.body.email;
     var senha = req.body.senha;
+
+    let query = `SELECT * FROM usuario WHERE email = ${req.params.email}`;
+    let query = db.query(sql, (err, results)=>{
+        if(err) throw err;
+        results.forEach(resultado(function(result){
+            if(result.email == email){
+                isValidUser = false;
+                res.json(cadastro = {
+                    erro : "Ja existe uma conta vinculada a este e-mail"
+                });
+            }
+        })
+        );
+    });
 
     let post = {email: req.body.email , senha: req.body.senha};
     let sql = 'INSERT INTO nomeTabela SET ?';

@@ -4,6 +4,28 @@ import './LoginModal.css'
 export default class LoginCadastro extends React.Component {
     constructor(props){
         super(props);
+        this.state = {
+            erro : ""
+        }
+    }
+
+    Login(data){
+        var login = fetch('/login', {
+            method : 'POST',
+            headers : {
+                'Content-Type' : 'application/json'
+            },
+            body : JSON.stringify({login: data})
+                });
+                if(login.errorLogin == undefined){
+                    console.log("Deu bom");
+                }
+                else{
+                    this.setState({
+                        erro : login.erroLogin
+                    })
+                    console.log("Deu ruim");
+                }
     }
 
     render(){

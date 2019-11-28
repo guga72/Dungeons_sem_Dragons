@@ -17,13 +17,13 @@ class App extends React.Component {
     this.criacaoCharHandler = this.criacaoCharHandler.bind(this);
   }
 
-  /*loginModalHandler = () => (
+  loginModalHandler = () => (
     this.setState(
       {
         mostrarLogin: false
       }
     )
-  )*/
+  )
 
   componentDidMount(){
     this.connectToServer();

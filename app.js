@@ -1,7 +1,6 @@
 const express = require('express');
 var cookieParser = require('cookie-parser');
 const path = require('path');
-const { createEngine } = require('express-react-views');
 var app = express();
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
@@ -13,7 +12,7 @@ app.use(bodyParser.urlencoded({extended: true}));
     const connection = mysql.createConnection({
         host: 'localhost',
         user : 'root',
-        password: '',
+        password: '123456',
         database: 'DsemD'
     });*/
 
@@ -74,8 +73,8 @@ app.post('/cadastro', (req, res) => {
     var email = req.body.email;
     var senha = req.body.senha;
 
-    let query = `SELECT * FROM usuario WHERE email = ${req.params.email}`;
-    let query = db.query(sql, (err, results)=>{
+    let select = `SELECT * FROM usuario WHERE email = ${req.params.email}`;
+    let existeCliente = db.existeCliente(select, (err, results)=>{
         if(err) throw err;
         results.forEach(resultado(function(result){
             if(result.email == email){

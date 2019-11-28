@@ -3,7 +3,7 @@ var cookieParser = require('cookie-parser');
 const path = require('path');
 var app = express();
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'client/build')));
 
 var bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({extended: true}));
@@ -26,11 +26,13 @@ app.use(bodyParser.urlencoded({extended: true}));
           app.use(express.static('client/build'));
 
           app.get('*', (req, res) =>{
-            res.sendFile(path.resolve(__dirname, "client", "build", "index.html"))
+            res.sendFile(path.resolve(__dirname, "client/build/index.html"))
           });
       }
 
-app.use(express.static(path.join(__dirname, './public')));
+      app.get('*', (req, res) => {
+        res.sendFile(path.join(__dirname+'/client/public/index.html'));
+      });
 
 app.get('/paginaInicial', (req, res) => {
     if(req.cookies.email == undefined){

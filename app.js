@@ -22,13 +22,15 @@ app.use(bodyParser.urlencoded({extended: true}));
         console.log('Connected!');
       });*/
 
-let usuarios = [];
-app.use(express.static(path.join(__dirname, './public')));
-var http = require('http');
+      if(process.env.NODE_ENV === "production"){
+          app.use(express.static('client/build'));
 
-app.get('/', (req, res) =>{
-    res.send('root route');
-});
+          app.get('*', (req, res) =>{
+            res.sendFile(path.resolve(__dirname, "client", "build", "index.html"))
+          });
+      }
+
+app.use(express.static(path.join(__dirname, './public')));
 
 app.get('/paginaInicial', (req, res) => {
     if(req.cookies.email == undefined){

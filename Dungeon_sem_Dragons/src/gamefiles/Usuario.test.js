@@ -1,4 +1,4 @@
-const Usuario = require('./usuario');
+const Usuario = require('./Usuario');
 
 test('compor raca do personagem', () => {
     let user = new Usuario("x", "x");

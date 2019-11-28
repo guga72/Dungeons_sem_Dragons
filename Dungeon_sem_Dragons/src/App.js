@@ -8,19 +8,29 @@ class App extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      mostrarLogin: true
+      mostrarLogin : ""
     }
-
-    this.loginModalHandler = this.loginModalHandler.bind(this);
+    //this.loginModalHandler = this.loginModalHandler.bind(this);
   }
 
-  loginModalHandler = () => (
+  /*loginModalHandler = () => (
     this.setState(
       {
         mostrarLogin: false
       }
     )
-  )
+  )*/
+
+  componentDidMount(){
+    this.getCookie();
+  }
+
+
+  getCookie = () =>{
+    fetch('/paginaInicial')
+    .then(res => res.json())
+    .then(res => this.setState({mostrarLogin : res.mostrarLogin}))
+  };
 
 
   render(){

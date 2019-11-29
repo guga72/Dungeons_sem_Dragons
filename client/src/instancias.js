@@ -2,7 +2,7 @@ const Cenarios = require('./gamefiles/mapa');
 const Npcs = require('./gamefiles/npc')
 const Personagens = require('./gamefiles/personagens');
 
-const persona = Personagens.personagemJogador("Orgh", "Não, obrigado");
+const persona = Personagens.personagemJogador("Orgh", "Masculino");
 const oba = Personagens.comporPersonagemJogador(persona, "Orc", "Evangélico");
 
 const cenarioInicial = Cenarios.cenario('Cenário Inicial', false, './img/cenarioInicial.jpg');

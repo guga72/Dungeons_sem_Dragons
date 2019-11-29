@@ -154,12 +154,15 @@ html
     border-radius: 10px;
 }
 
-.statsbox
+.status-personagem
 {
     text-align: center;
     overflow: auto;
     height: 50%;
     position: relative;
+    bottom: 0;
+    transform: translateY(-25%);
+    font-size: 2rem;
 }
 
 h3

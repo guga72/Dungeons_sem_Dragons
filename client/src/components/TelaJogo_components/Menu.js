@@ -73,9 +73,9 @@ export default class Menu extends React.Component {
                           }
                       </div>
                   </div>
-                  <div className="status-personagem">
-                      <h3 className="nome-personagem">{this.state.personagem.nome}</h3>
-                      <div className="statsbox">
+                  <div class="status-personagem">
+                      <h3 class="nome-personagem">{this.state.personagem.nome}</h3>
+                      <div class="statsbox">
                         <h5>Sexo: {this.state.personagem.sexo}</h5>
                         <h5>Raça: {this.state.personagem.raca.nome}</h5>
                         <h5>Level: {this.state.personagem.level}</h5>

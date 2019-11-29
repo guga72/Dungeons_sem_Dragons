@@ -18,7 +18,7 @@ export default class TelaJogo extends React.Component {
         return(
             <div className="App">
                 <Menu />
-                <Game />
+                <Game combateHandler={this.props.combateHandler}/>
             </div>
         );
     }

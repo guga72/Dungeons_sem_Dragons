@@ -24,10 +24,10 @@ export default class Game extends React.Component {
                   </div>
                   <div className="opcoes">
                       <div className="opcoes-box">
-                          <div className="game-opcao">Matar rufião e resgatar cocadas</div>
-                          <div className="game-opcao">Matar rufião e comer as cocadas</div>
-                          <div className="game-opcao">Matar as cocadas e comer o rufião</div>
-                          <div className="game-opcao">Fingir que não entende português</div>
+                          <div className="game-opcao">Tomar caminho da esquerda</div>
+                          <div className="game-opcao">Tomar caminho da direita</div>
+                          <div className="game-opcao">Descansar</div>
+                          <div onClick={this.props.combateHandler} className="game-opcao">Atacar Dragão</div>
                       </div>
                   </div>
               </div>

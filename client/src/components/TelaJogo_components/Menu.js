@@ -72,31 +72,6 @@ export default class Menu extends React.Component {
                             */
                           }
                       </div>
-                      <div className="sessao">
-                          Sessao
-                          <div className="item-sessao">c</div>
-                          <div className="item-sessao">d</div>
-                          <div className="item-sessao">e</div>
-                      </div>
-                      <div className="sessao">
-                          Sessao
-                          <div className="item-sessao">c</div>
-                          <div className="item-sessao">d</div>
-                          <div className="item-sessao">e</div>
-                      </div>
-                      
-                      <div className="sessao">
-                          Sessao
-                          <div className="item-sessao">c</div>
-                          <div className="item-sessao">d</div>
-                          <div className="item-sessao">e</div>
-                      </div>
-                      <div className="sessao">
-                          Sessao
-                          <div className="item-sessao">c</div>
-                          <div className="item-sessao">d</div>
-                          <div className="item-sessao">e</div>
-                      </div>
                   </div>
                   <div className="status-personagem">
                       <h3 className="nome-personagem">{this.state.personagem.nome}</h3>

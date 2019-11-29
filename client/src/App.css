@@ -96,7 +96,7 @@ html
 
 .imagem
 {
-    background-image: url('https://media.agoramt.com.br/2012/08/Tiozinho-da-barraquinha-de-doce.jpg');
+    background-image: url('./resources/bg1.jpg');
     background-size: cover;
     position: relative;
     top: 50%;
@@ -157,8 +157,9 @@ html
 .statsbox
 {
     text-align: center;
-    margin-top: 20px;
     overflow: auto;
+    height: 50%;
+    position: relative;
 }
 
 h3
@@ -166,3 +167,80 @@ h3
     text-align: center;
     margin: 10px 0 10px 0;
 }
+
+.modal_combate
+{
+    z-index: 1000;
+    width: 100rem;
+}
+
+.info-col, .imagem_ataque
+{
+    display: inline-block;
+}
+
+.imagemCombate, .ataques
+{
+    display: block;
+}
+
+.imagemCombate
+{
+    height: 70%;
+    background-image: url('./resources/D_D_Art_and_Arcan__Regular_Edition__book_cover.0.jpg');
+    background-size: cover;
+    border-bottom-left-radius: 10rem;
+    border-bottom-right-radius: 10rem; 
+}
+
+.ataques
+{
+    height: 30%;
+    position: relative;
+
+
+}
+
+.info-col
+{
+    height: 60%;
+    width: 20%;
+    transform: translateY(-50%);
+    font-size: 2.2rem;
+    text-align: center;
+
+}
+
+.info1
+{
+    left: 0;
+}
+
+.info2
+{
+    right: 0;
+}
+
+
+
+.imagem_ataque
+{
+    height: 100%;
+    width: 60%;
+}
+
+.ataque-basico
+{
+    height: 10rem;
+    width: 10rem;
+    background-image: url('./resources/sword.png');
+    background-size: cover;
+    border-radius: 100%;
+    border: 1rem solid black;
+    margin-left: 5rem;
+
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+

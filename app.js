@@ -4,6 +4,7 @@ const path = require('path');
 var app = express();
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'client/build')));
+var router = express.Router();
 
 var bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({extended: true}));
@@ -34,23 +35,23 @@ app.use(bodyParser.urlencoded({extended: true}));
         res.sendFile(path.join(__dirname+'/client/public/index.html'));
       });
 
-app.get('/paginaInicial', (req, res) => {
+      router.get('/paginaInicial', (req, res) => {
     if(req.cookies.email == undefined){
         res.json(mostrarLogin = {mostrarLogin : true});
     }
     res.json(mostrarLogin = {mostrarLogin: false})
 });
 
-app.get('/logout'), (req,res) =>{
+router.get('/logout'), (req,res) =>{
     res.clearCookie('email', {path : '/'}) ;
 }
 
 
-app.get('/login', (req,res) =>{
+router.get('/login', (req,res) =>{
     let email = req.body.email;
     let senha = req.body.senha;
     var isValidUser = false;
-    let sql = 'SELECT * FROM usuario';
+    let sql = `SELECT * FROM usuario WHERE email = ${email}`;
     let query = db.query(sql, (err, results)=>{
         if(err) throw err;
         results.forEach(resultado(function(result){
@@ -73,15 +74,15 @@ app.get('/login', (req,res) =>{
             }
         }
         res.json(login = {
-            errorLogin : "Usuario ou senha incorretos"
+            login : false
         });
 });
 
-app.post('/cadastro', (req, res) => {
+router.post('/cadastro', (req, res) => {
     var email = req.body.email;
     var senha = req.body.senha;
 
-    let select = `SELECT * FROM usuario WHERE email = ${req.params.email}`;
+    let select = `SELECT * FROM usuario WHERE email = ${email}`;
     let existeCliente = db.existeCliente(select, (err, results)=>{
         if(err) throw err;
         results.forEach(resultado(function(result){
@@ -110,7 +111,7 @@ app.post('/cadastro', (req, res) => {
 });
 });
 
-app.delete('/deletePersonagem', (req, res) =>{
+router.delete('/deletePersonagem', (req, res) =>{
     let deletar = {email: req.email, persoangem : req.personagem};
     let sql = 'DELETE FROM personagem WHERE';
     let query = db.query(sql, deletar);

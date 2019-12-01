@@ -4,6 +4,7 @@ import LoginCadastro from './components/LoginModal';
 import TelaJogo from './components/TelaJogo';
 import TelaPersonagemModal from './components/TelaPersonagemModal';
 import CombateModal from './components/CombateModal'
+import axios from 'axios';
 
 
 class App extends React.Component {
@@ -21,12 +22,20 @@ class App extends React.Component {
   }
 
   loginModalHandler = () => (
-    this.setState(
+    this.setState({
+      mostrarLogin :
+      axios.post('http://localhost:8080/api/login', {
+     data : { email : this.props.email,
+      senha : this.props.senha
+     },
+    })
+  })
+    /*this.setState(
       {
         mostrarLogin: false
       }
-    )
-  )
+    )*/
+  );
 
   combateHandler = () => (
     this.setState(
@@ -36,7 +45,7 @@ class App extends React.Component {
     )
   )
 
-  componentDidMount(){
+  componentDidMount = () =>{
     this.connectToServer();
     this.getCookie();
   }

@@ -31,23 +31,23 @@ export default class LoginCadastro extends React.Component {
     render(){
         return(
             <div className="App">
-                <div class="modal-bg">
-                    <div class="modal">
-                        <div class="boxes">
-                            <div class="login-box login-cadastro-box">
+                <div className="modal-bg">
+                    <div className="modal">
+                        <div className="boxes">
+                            <div className="login-box login-cadastro-box">
                                 <h3>Login</h3>
-                                <form action="#">
+                                <form action="this.props.loginModalHandler()">
                                     <input type="email" placeholder='email'/>
                                     <input type="password" placeholder='senha'/>
-                                    <button onClick={this.props.loginModalHandler} class="botao login-button" type="submit">Login</button>
+                                    <button className="botao login-button" type="submit">Login</button>
                                 </form>
                             </div>
-                            <div class="cadastro-box login-cadastro-box">
+                            <div className="cadastro-box login-cadastro-box">
                                 <h3>Cadastro</h3>
                                 <form action="#">
                                     <input type="email" placeholder='email'/>
                                     <input type="password" placeholder='senha'/>
-                                    <button class="botao cadastro-button" type="submit">Cadastrar</button>
+                                    <button className="botao cadastro-button" type="submit">Cadastrar</button>
                                 </form>
                             </div>
                         </div>

@@ -7,6 +7,7 @@ export default class LoginCadastro extends React.Component {
         this.state = {
             erro : ""
         }
+        this.loginModalHandler = this.loginModalHandler.bind(this);
     }
 
     Login(data){

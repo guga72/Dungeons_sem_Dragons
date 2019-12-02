@@ -28,20 +28,18 @@ export default class TelaPersonagemModal extends React.Component {
                                 <input className="input2" type="text" placeholder="Nome do personagem" name="nome"/>
                                 <div className="sexo">
                                     <p>Sexo:</p>
-                                    <label for="r1"> Masculino</label>
+                                    <label htmlFor="r1"> Masculino</label>
                                     <input type="radio" id="r1" name="sexo" value="Masculino"/>
-                                    <label for="r1"> Feminino</label>
+                                    <label htmlFor="r1"> Feminino</label>
                                     <input type="radio" id="r2" name="sexo" value="Feminino"/>
                                 </div>
-                                <select id="Raca" name="Raça">
-                                    <option selected disabled>Raça</option>
+                                <select id="Raca" name="Raça" defaultValue="Raça">
                                     <option>Elfo</option>
                                     <option>Humano</option>
                                     <option>Orc</option>
                                 </select>
 
-                                <select id="Classe" name="Classe">
-                                    <option selected disabled>Classe</option>
+                                <select id="Classe" name="Classe" defaultValue="Classe">
                                     <option>Guerreiro</option>
                                     <option>Arqueiro</option>
                                     <option>Ladino</option>

@@ -21,12 +21,12 @@ export default class TelaPersonagemModal extends React.Component {
     render(){
         return(
             <div className="App">
-                <div class="modal-bg modal2">
-                    <div class="modal">
-                        <div class="form-box">
+                <div className="modal-bg modal2">
+                    <div className="modal">
+                        <div className="form-box">
                             <form>
-                                <input class="input2" type="text" placeholder="Nome do personagem" name="nome"/>
-                                <div class="sexo">
+                                <input className="input2" type="text" placeholder="Nome do personagem" name="nome"/>
+                                <div className="sexo">
                                     <p>Sexo:</p>
                                     <label for="r1"> Masculino</label>
                                     <input type="radio" id="r1" name="sexo" value="Masculino"/>
@@ -48,7 +48,7 @@ export default class TelaPersonagemModal extends React.Component {
                                     <option>Evangélico</option>
                                 </select>
 
-                                <button onClick={this.props.criacaoCharHandler} class="botao login-button" type="submit">Criar</button>
+                                <button onClick={this.props.criacaoCharHandler} className="botao login-button" type="submit">Criar</button>
                             </form>
                         </div>
                     </div>

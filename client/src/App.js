@@ -8,7 +8,7 @@ import axios from 'axios';
 
 
 class App extends React.Component {
-  constructor(props){
+  constructor(props) {
     super(props);
     this.state = {
       mostrarLogin: true,
@@ -21,21 +21,32 @@ class App extends React.Component {
     this.combateHandler = this.combateHandler.bind(this);
   }
 
-  loginModalHandler = () => (
-    this.setState({
-      mostrarLogin :
-      axios.post('http://localhost:8080/api/login', {
-     data : { email : this.props.email,
-      senha : this.props.senha
-     },
-    })
-  })
-    /*this.setState(
-      {
-        mostrarLogin: false
-      }
-    )*/
-  );
+  loginModalHandler = (usuario) => {
+    let { email, senha } = usuario;
+    axios.post('http://localhost:8080/login', { email, senha })
+      .then(({ data }) => {
+        this.setState({
+          mostrarLogin: data
+        });
+      })
+  }
+
+  // } (
+
+  //   this.setState({
+  //     mostrarLogin :
+  //     axios.post('http://localhost:8080/api/login', {
+  //    data : { email : this.props.email,
+  //     senha : this.props.senha
+  //    },
+  //   })
+  // })
+  //   /*this.setState(
+  //     {
+  //       mostrarLogin: false
+  //     }
+  //   )*/
+  // );
 
   combateHandler = () => (
     this.setState(
@@ -45,20 +56,20 @@ class App extends React.Component {
     )
   )
 
-  componentDidMount = () =>{
+  componentDidMount = () => {
     this.connectToServer();
     this.getCookie();
   }
 
 
-  connectToServer = () =>{
+  connectToServer = () => {
     fetch('/');
   }
 
-  getCookie = () =>{
+  getCookie = () => {
     fetch('/paginaInicial')
-    .then(res => res.json())
-    .then(res => this.setState({mostrarLogin : res.mostrarLogin}))
+      .then(res => res.json())
+      .then(res => this.setState({ mostrarLogin: res.mostrarLogin }))
   };
 
   criacaoCharHandler = () => (
@@ -71,13 +82,13 @@ class App extends React.Component {
 
 
 
-  render(){
+  render() {
     return (
       <div className="App">
-        <>{this.state.mostrarLogin ? <LoginCadastro loginModalHandler= {this.loginModalHandler}/> : null}</>
-        <>{this.state.temChar ? null : <TelaPersonagemModal criacaoCharHandler= {this.criacaoCharHandler} />}</>
-        <>{this.state.mostrarCombate ? <CombateModal combateHandler={this.combateHandler}/> : null}</>
-        <TelaJogo combateHandler={this.combateHandler}/>
+        <>{this.state.mostrarLogin ? <LoginCadastro loginModalHandler={this.loginModalHandler} /> : null}</>
+        <>{this.state.temChar ? null : <TelaPersonagemModal criacaoCharHandler={this.criacaoCharHandler} />}</>
+        <>{this.state.mostrarCombate ? <CombateModal combateHandler={this.combateHandler} /> : null}</>
+        <TelaJogo combateHandler={this.combateHandler} />
       </div>
     );
   }

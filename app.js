@@ -10,7 +10,7 @@ var Data = require("data");
 var bodyParser = require("body-parser");
 app.use(bodyParser.urlencoded({ extended: true }));
 
-const mysql = require("mysql");
+/*const mysql = require("mysql");
 const connection = mysql.createConnection({
   host: "localhost",
   user: "root",
@@ -21,7 +21,12 @@ const connection = mysql.createConnection({
 connection.connect(err => {
   if (err) throw err;
   console.log("Connected!");
-});
+});*/
+app.all('http://localhost:3000', function (req, res) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Content-Type,Content-Length, Authorization, Accept,X-Requested-With");
+  res.header("Access-Control-Allow-Methods", "PUT,POST,GET,DELETE,OPTIONS");
+})
 
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));

@@ -5,9 +5,12 @@ export default class LoginCadastro extends React.Component {
     constructor(props){
         super(props);
         this.state = {
-            erro : ""
+            erro : "",
+            usuario: {
+                email: null,
+                senha: null
+            }
         }
-        this.loginModalHandler = this.loginModalHandler.bind(this);
     }
 
     Login(data){
@@ -28,6 +31,22 @@ export default class LoginCadastro extends React.Component {
                     console.log("Deu ruim");
                 }
     }
+    handleSubmitForm = e => {
+        e.preventDefault();
+        const {loginModalHandler} = this.props;
+        loginModalHandler(this.state.usuario);
+
+    }
+
+    handleChange = e =>{
+        this.setState({
+            usuario:{
+                ...this.state.usuario,
+                [e.target.name]: e.target.value
+            }
+        });
+        console.log(this.state.usuario)
+    }
 
     render(){
         return(
@@ -37,9 +56,9 @@ export default class LoginCadastro extends React.Component {
                         <div className="boxes">
                             <div className="login-box login-cadastro-box">
                                 <h3>Login</h3>
-                                <form action="this.props.loginModalHandler()">
-                                    <input type="email" placeholder='email'/>
-                                    <input type="password" placeholder='senha'/>
+                                <form onSubmit={this.handleSubmitForm}>
+                                    <input type="email" placeholder='email' name="email" onChange={this.handleChange}/>
+                                    <input type="password" placeholder='senha' name="senha" onChange={this.handleChange}/>
                                     <button className="botao login-button" type="submit">Login</button>
                                 </form>
                             </div>

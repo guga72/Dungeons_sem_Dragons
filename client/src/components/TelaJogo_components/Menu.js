@@ -18,18 +18,20 @@ export default class Menu extends React.Component {
     criarSessaoNPCs(){
       
         let c = this.state.cenario.npcs;
-        let listanpc = [];
-        for(let i in c){
-          listanpc.push(<li className="item-sessao">{i.nome}</li>)
-        }
-  
-        return listanpc;
+        let numeros = Array(c.length).fill(1).map((x, y) => x + y)
+        const listaNpcs = numeros.map((numero) =>
+          <li key={numero.toString()}>
+            c[numero]
+          </li>
+        );
+        return listaNpcs;
   }
   /*
     criarSessaoLigacoes(){
       let c = this.state.cenario
       let listaligacoes = [];
-      for(let i in c.ligacoes){
+      let numeros = range(1, c.ligacoes.length)
+      let ligacoes = <li key=>
         listaligacoes.push(<li className="item-sessao">{i.nome}</li>)
         }
       return listaligacoes;

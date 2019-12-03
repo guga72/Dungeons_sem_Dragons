@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { login, cadastro } from './userFunctions'
 import './LoginModal.css'
 
 export default class LoginCadastro extends React.Component {
@@ -6,46 +7,46 @@ export default class LoginCadastro extends React.Component {
         super(props);
         this.state = {
             erro : "",
-            usuario: {
-                email: null,
-                senha: null
-            }
+            email: '',
+            senha: ''
         }
+
+        this.onChange = this.onChange.bind(this)
+        this.onSubmitLogin = this.onSubmitLogin.bind(this)
+        this.onSubmitCadastro = this.onSubmitCadastro.bind(this)
     }
 
-    Login(data){
-        var login = fetch('/login', {
-            method : 'POST',
-            headers : {
-                'Content-Type' : 'application/json'
-            },
-            body : JSON.stringify({login: data})
-                });
-                if(login.errorLogin == undefined){
-                    console.log("Deu bom");
-                }
-                else{
-                    this.setState({
-                        erro : login.erroLogin
-                    })
-                    console.log("Deu ruim");
-                }
-    }
-    handleSubmitForm = e => {
-        e.preventDefault();
-        const {loginModalHandler} = this.props;
-        loginModalHandler(this.state.usuario);
-
+    onChange(e){
+        this.setState({[e.target.name]: e.target.value})
     }
 
-    handleChange = e =>{
-        this.setState({
-            usuario:{
-                ...this.state.usuario,
-                [e.target.name]: e.target.value
+    onSubmitLogin(e){
+        e.preventDefault()
+
+        const usuario = {
+            email: this.state.email,
+            senha: this.state.senha
+        }
+
+        login(usuario).then(res => {
+            if(res){
+                this.props.loginModalHandler();
             }
-        });
-        console.log(this.state.usuario)
+        })
+    }
+
+    onSubmitCadastro(e){
+        e.preventDefault()
+
+        const usuario = {
+            email: this.state.email,
+            senha: this.state.senha
+        }
+
+        cadastro(usuario).then(res => {
+            if(res){
+            }
+        })
     }
 
     render(){
@@ -56,17 +57,17 @@ export default class LoginCadastro extends React.Component {
                         <div className="boxes">
                             <div className="login-box login-cadastro-box">
                                 <h3>Login</h3>
-                                <form onSubmit={this.handleSubmitForm}>
-                                    <input type="email" placeholder='email' name="email" onChange={this.handleChange}/>
-                                    <input type="password" placeholder='senha' name="senha" onChange={this.handleChange}/>
+                                <form noValidate onSubmit={this.onSubmitLogin}>
+                                    <input type="email" placeholder='email' name="email" onChange={this.onChange}/>
+                                    <input type="password" placeholder='senha' name="senha" onChange={this.onChange}/>
                                     <button className="botao login-button" type="submit">Login</button>
                                 </form>
                             </div>
                             <div className="cadastro-box login-cadastro-box">
                                 <h3>Cadastro</h3>
-                                <form action="#">
-                                    <input type="email" placeholder='email'/>
-                                    <input type="password" placeholder='senha'/>
+                                <form noValidate onSubmit={this.onSubmitCadastro}>
+                                    <input type="email" placeholder='email' onChange={this.onChange}/>
+                                    <input type="password" placeholder='senha'  onChange={this.onChange}/>
                                     <button className="botao cadastro-button" type="submit">Cadastrar</button>
                                 </form>
                             </div>
@@ -74,6 +75,5 @@ export default class LoginCadastro extends React.Component {
                     </div>
                 </div>
             </div>
-        );
-    }
+        )}
 }

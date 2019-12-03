@@ -15,20 +15,17 @@ class App extends React.Component {
       mostrarCombate: false,
       temChar: false
     }
-    this.connectToServer = this.connectToServer.bind(this);
+   // this.connectToServer = this.connectToServer.bind(this);
     this.loginModalHandler = this.loginModalHandler.bind(this);
     this.criacaoCharHandler = this.criacaoCharHandler.bind(this);
     this.combateHandler = this.combateHandler.bind(this);
   }
 
-  loginModalHandler = (usuario) => {
-    let { email, senha } = usuario;
-    axios.post('http://localhost:8080/login', { email, senha })
-      .then(({ data }) => {
+  loginModalHandler = () => {
+
         this.setState({
-          mostrarLogin: data
+          mostrarLogin: false
         });
-      })
   }
 
   // } (
@@ -55,22 +52,6 @@ class App extends React.Component {
       }
     )
   )
-
-  componentDidMount = () => {
-    this.connectToServer();
-    this.getCookie();
-  }
-
-
-  connectToServer = () => {
-    fetch('/');
-  }
-
-  getCookie = () => {
-    fetch('/paginaInicial')
-      .then(res => res.json())
-      .then(res => this.setState({ mostrarLogin: res.mostrarLogin }))
-  };
 
   criacaoCharHandler = () => (
     this.setState(

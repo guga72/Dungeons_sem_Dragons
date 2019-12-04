@@ -11,14 +11,31 @@ export default class LoginCadastro extends React.Component {
             senha: ''
         }
 
-        this.onChange = this.onChange.bind(this)
+        this.onChange1 = this.onChange1.bind(this)
+        this.onChange2 = this.onChange2.bind(this)
         this.onSubmitLogin = this.onSubmitLogin.bind(this)
         this.onSubmitCadastro = this.onSubmitCadastro.bind(this)
     }
 
-    onChange(e){
-        this.setState({[e.target.name]: e.target.value})
-    }
+    onChange1(event) {
+
+        const value = event.target.value;
+        const name = event.target.name;
+      
+        this.setState({
+          [name]: value
+        });
+      }
+
+      onChange2(event) {
+
+        const value = event.target.value;
+        const name = event.target.name;
+      
+        this.setState({
+          [name]: value
+        });
+      }
 
     onSubmitLogin(e){
         e.preventDefault()
@@ -31,6 +48,8 @@ export default class LoginCadastro extends React.Component {
         login(usuario).then(res => {
             if(res){
                 this.props.loginModalHandler();
+            }else{
+                alert('Errado')
             }
         })
     }
@@ -58,16 +77,36 @@ export default class LoginCadastro extends React.Component {
                             <div className="login-box login-cadastro-box">
                                 <h3>Login</h3>
                                 <form noValidate onSubmit={this.onSubmitLogin}>
-                                    <input type="email" placeholder='email' name="email" onChange={this.onChange}/>
-                                    <input type="password" placeholder='senha' name="senha" onChange={this.onChange}/>
+                                    <input 
+                                        type="email"
+                                        placeholder='email'
+                                        name="email"
+                                        onChange={this.onChange1}/>
+
+                                    <input
+                                        type="password"
+                                        placeholder='senha'
+                                        name="senha"
+                                        onChange={this.onChange1}/>
+
                                     <button className="botao login-button" type="submit">Login</button>
                                 </form>
                             </div>
                             <div className="cadastro-box login-cadastro-box">
                                 <h3>Cadastro</h3>
                                 <form noValidate onSubmit={this.onSubmitCadastro}>
-                                    <input type="email" placeholder='email' onChange={this.onChange}/>
-                                    <input type="password" placeholder='senha'  onChange={this.onChange}/>
+                                    <input 
+                                        type="email"
+                                        name="email"
+                                        placeholder='email'
+                                        onChange={this.onChange2}/>
+
+                                    <input 
+                                        type="password"
+                                        name="senha"
+                                        placeholder='senha'
+                                        onChange={this.onChange2}/>
+
                                     <button className="botao cadastro-button" type="submit">Cadastrar</button>
                                 </form>
                             </div>

@@ -8,7 +8,7 @@ export const cadastro = novoUsuario => {
 
     })
     .then(res => {
-        console.log("Registrado")
+        console.log(res)
     })
 }
 

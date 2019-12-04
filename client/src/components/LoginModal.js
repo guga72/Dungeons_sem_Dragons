@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import { login, cadastro } from './userFunctions'
 import './LoginModal.css'
+import SweetAlert from 'sweetalert2-react';
 
 export default class LoginCadastro extends React.Component {
     constructor(props){
         super(props);
         this.state = {
-            erro : "",
+            erro : false,
             email: '',
             senha: ''
         }
@@ -49,7 +50,9 @@ export default class LoginCadastro extends React.Component {
             if(res){
                 this.props.loginModalHandler();
             }else{
-                alert('Errado')
+                this.setState({
+                    erro: true
+                })
             }
         })
     }
@@ -74,6 +77,11 @@ export default class LoginCadastro extends React.Component {
                 <div className="modal-bg">
                     <div className="modal">
                         <div className="boxes">
+                            <SweetAlert
+                            show={this.state.erro}
+                            title="Erro"
+                            text="Senha ou Email de usuário errados"
+                            onConfirm={() => this.setState({erro: false})}/>
                             <div className="login-box login-cadastro-box">
                                 <h3>Login</h3>
                                 <form noValidate onSubmit={this.onSubmitLogin}>

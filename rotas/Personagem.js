@@ -26,4 +26,4 @@ personagem.post('/criarPersonagem', (req, res) => {
     })
 })
 
-module.exports = personagem
+module.exports = personagem;

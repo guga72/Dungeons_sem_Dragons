@@ -98,7 +98,7 @@ export default class LoginCadastro extends React.Component {
                                         name="senha"
                                         onChange={this.onChange1}/>
 
-                                    <button className="botao login-button" type="submit">Login</button>
+                                    <button name="login" className="botao login-button" type="submit">Login</button>
                                 </form>
                             </div>
                             <div className="cadastro-box login-cadastro-box">
@@ -106,17 +106,17 @@ export default class LoginCadastro extends React.Component {
                                 <form noValidate onSubmit={this.onSubmitCadastro}>
                                     <input 
                                         type="email"
-                                        name="email"
+                                        name="email2"
                                         placeholder='email'
                                         onChange={this.onChange2}/>
 
                                     <input 
                                         type="password"
-                                        name="senha"
+                                        name="senha2"
                                         placeholder='senha'
                                         onChange={this.onChange2}/>
 
-                                    <button className="botao cadastro-button" type="submit">Cadastrar</button>
+                                    <button name="cadastro" className="botao cadastro-button" type="submit">Cadastrar</button>
                                 </form>
                             </div>
                         </div>

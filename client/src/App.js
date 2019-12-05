@@ -35,23 +35,6 @@ class App extends React.Component {
     });
 }
 
-  // } (
-
-  //   this.setState({
-  //     mostrarLogin :
-  //     axios.post('http://localhost:8080/api/login', {
-  //    data : { email : this.props.email,
-  //     senha : this.props.senha
-  //    },
-  //   })
-  // })
-  //   /*this.setState(
-  //     {
-  //       mostrarLogin: false
-  //     }
-  //   )*/
-  // );
-
   combateHandler = () => (
     this.setState(
       {

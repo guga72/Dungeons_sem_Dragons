@@ -15,10 +15,12 @@
     "jsonwebtoken": "^8.5.1",
     "mysql": "^2.17.1",
     "mysql2": "^2.0.1",
+    "puppeteer": "^2.0.0",
     "sequelize": "^5.21.2",
     "sweetalert2-react": "^0.8.3"
   },
   "scripts": {
+    "test": "jest",
     "start": "node app.js",
     "server": "node app.js",
     "client": "npm start --prefix client",

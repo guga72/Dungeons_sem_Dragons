@@ -1,21 +1,44 @@
 import React, { Component } from 'react';
 import './LoginModal.css'
+import { criarPersonagem}  from './functionsPersonagem'
 //import '../gamefiles/Usuario'
 
 export default class TelaPersonagemModal extends React.Component {
     constructor(props){
         super(props);
         this.state = {
-            nome: null,
-            sexo: null,
-            raca: null,
-            classe: null
+            nome: '',
+            sexo: '',
+            raca: '',
+            classe: ''
         };
-
+        this.onChange = this.onChange.bind(this)
+        this.onSubmit = this.onSubmit.bind(this)
     }
 
     criarUsuario(){
         
+    }
+
+    onChange(e) {
+        this.setState({[e.target.name]: e.target.value})
+    }
+
+    onSubmit(e){
+        e.preventDefault()
+
+        const personagem = {
+            nome: this.state.nome,
+            sexo: this.state.sexo,
+            raca: this.state.raca,
+            classe: this.state.classe
+        }
+
+        criarPersonagem(personagem).then(res => {
+            if(res){
+                this.props.personagemModalHandler();
+            }
+        })
     }
 
     render(){
@@ -24,7 +47,7 @@ export default class TelaPersonagemModal extends React.Component {
                 <div className="modal-bg modal2">
                     <div className="modal">
                         <div className="form-box">
-                            <form>
+                            <form onSubmit={this.onSubmit}>
                                 <input className="input2" type="text" placeholder="Nome do personagem" name="nome"/>
                                 <div className="sexo">
                                     <p>Sexo:</p>

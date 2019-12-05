@@ -1,19 +1,26 @@
 const Sequelize = require("sequelize")
 const db = require("../db/db")
+const Personagem = require('./Personagem')
 
-module.exports = db.sequelize.define(
-    'user',
+var Usuario = db.sequelize.define(
+    'usuario',
     {
         email: {
             type: Sequelize.STRING,
             primaryKey: true,
-            autoIncrement: true
+            autoIncrement: false
         },
         senha: {
             type: Sequelize.STRING
         }
     },
     {
-        timestamps: false
+        timestamps: false,
+        tableName: 'usuario'
     }
+
 )
+
+Usuario.hasOne(Personagem)
+
+module.exports = Usuario;

@@ -17,7 +17,7 @@ class App extends React.Component {
     }
    // this.connectToServer = this.connectToServer.bind(this);
     this.loginModalHandler = this.loginModalHandler.bind(this);
-    this.criacaoCharHandler = this.criacaoCharHandler.bind(this);
+    this.personagemModalHandler = this.personagemModalHandler.bind(this);
     this.combateHandler = this.combateHandler.bind(this);
   }
 
@@ -27,6 +27,13 @@ class App extends React.Component {
           mostrarLogin: false
         });
   }
+
+  personagemModalHandler = () => {
+
+    this.setState({
+      temChar: true
+    });
+}
 
   // } (
 
@@ -53,13 +60,6 @@ class App extends React.Component {
     )
   )
 
-  criacaoCharHandler = () => (
-    this.setState(
-      {
-        temChar: true
-      }
-    )
-  )
 
 
 
@@ -67,7 +67,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <>{this.state.mostrarLogin ? <LoginCadastro loginModalHandler={this.loginModalHandler} /> : null}</>
-        <>{this.state.temChar ? null : <TelaPersonagemModal criacaoCharHandler={this.criacaoCharHandler} />}</>
+        <>{this.state.temChar ? null : <TelaPersonagemModal personagemModalHandler={this.personagemModalHandler} />}</>
         <>{this.state.mostrarCombate ? <CombateModal combateHandler={this.combateHandler} /> : null}</>
         <TelaJogo combateHandler={this.combateHandler} />
       </div>

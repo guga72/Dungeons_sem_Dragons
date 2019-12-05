@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { login, cadastro } from './userFunctions'
+import { login, cadastro } from './functionsUsuario'
 import './LoginModal.css'
 import SweetAlert from 'sweetalert2-react';
 
@@ -67,6 +67,7 @@ export default class LoginCadastro extends React.Component {
 
         cadastro(usuario).then(res => {
             if(res){
+                
             }
         })
     }

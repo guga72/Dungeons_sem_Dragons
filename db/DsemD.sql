@@ -11,17 +11,18 @@ create table classe(
 
 create table raca(
     id_raca int primary key,
-    nome varchar(255),
-    vida int,
-    defesa int,
-    forca int
+    nome varchar(255)
 );
 
 create table personagem(
     id_personagem int primary KEY,
-    gold float,
+    nome varchar(255),
+    gold int,
     nivel int,
+    ataque int,
     defesa int,
+    magia int,
+    defesam int,
     id_raca int,
     id_classe int,
     id_usuario varchar(255),

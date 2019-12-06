@@ -1,4 +1,4 @@
-const express = require("express")
+/*const express = require("express")
 const raca = express.Router()
 const cors = require('cors')
 const Raca = require("../modelos_relacionais/Raca")
@@ -20,4 +20,4 @@ raca.get('getRaca',(req,res)=>{
     )
 });
 
-module.exports = raca;
+module.exports = raca;*/

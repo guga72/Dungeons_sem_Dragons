@@ -106,13 +106,13 @@ export default class LoginCadastro extends React.Component {
                                 <form noValidate onSubmit={this.onSubmitCadastro}>
                                     <input 
                                         type="email"
-                                        name="email2"
+                                        name="email"
                                         placeholder='email'
                                         onChange={this.onChange2}/>
 
                                     <input 
                                         type="password"
-                                        name="senha2"
+                                        name="senha"
                                         placeholder='senha'
                                         onChange={this.onChange2}/>
 

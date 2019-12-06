@@ -1,8 +1,6 @@
 const express = require("express")
 const usuarios = express.Router()
 const cors = require('cors')
-const jwt = require('jsonwebtoken')
-const bcrypt = require('bcrypt')
 
 const Usuario = require("../modelos_relacionais/Usuario")
 
@@ -24,8 +22,7 @@ usuarios.post('/cadastro', (req, res) => {
     })
     .then(usuario => {
         if(!usuario){
-            bcrypt.hash(req.body.senha, 10, (err, hash) => {
-                userData.senha = hash
+                //userData.senha = hash
                 Usuario.create(userData)
                 .then(usuario => {
                     res.json({status: usuario.email + ' registrado'})
@@ -33,7 +30,6 @@ usuarios.post('/cadastro', (req, res) => {
                 .catch(err => {
                     res.send('error: ' + err)
                 })
-            })
         }else{
             res.json({error: "Usuario já cadastrado"})
         }
@@ -52,12 +48,7 @@ usuarios.post('/login', (req, res) => {
     })
     .then(usuario => {
         if(usuario) {
-            if(bcrypt.compareSync(req.body.senha, usuario.senha)) {
-                let token = jwt.sign(usuario.dataValues, process.env.SECRET_KEY, {
-                    expiresIn: 1440
-                })
-                res.send(token)
-            }
+            res.send(token)
         }else{
             res.status(400).json({error: 'Usuário não existe'})
         }

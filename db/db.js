@@ -16,5 +16,3 @@ const sequelize = new Sequelize("reactexpress", "root", "12345678", {
 
 db.sequelize = sequelize
 db.Sequelize = Sequelize
-
-module.exports = db;

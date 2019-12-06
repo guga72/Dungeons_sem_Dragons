@@ -111,11 +111,8 @@ function droparGold(personagem, personagemInimigo){
 
 
 function atacar(personagem, adversario){
-    if((personagem.dano - adversario.defesa) < 0){
-        adversario.vida -= 0;
-    }
-    else{
-        adversario.vida -=  personagem.dano;
+    if(personagem.ataque > adversario.defesa){
+        adversario.hp -=  personagem.ataque;
     }
 }
 
@@ -130,4 +127,6 @@ module.exports = {
     atributos: atributos,
     personagemJogador: personagemJogador,
     comporPersonagemJogador: comporPersonagemJogador,
+    atacar : atacar,
+    descansar : descansar,
 }

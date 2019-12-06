@@ -18,3 +18,12 @@ test('compor arma equipavel do personagem', () => {
     expect(user.personagens[0].armas_equipaveis).toBe("adaga");
 });
 
+test('criar usuario', ()=>{
+    let user = new Usuario("nome", "senha");
+    expect(user.email).toBe("nome");
+})
+
+test('criar usuario', ()=>{
+    let user = new Usuario("nome", "senha");
+    expect(user.senha).toBe("senha");
+})

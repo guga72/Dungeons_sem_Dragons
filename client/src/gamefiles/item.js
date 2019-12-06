@@ -22,7 +22,7 @@ const itemEquipavel = (item, atq, def, mag, defm, eqpSlot) => {
     atributosEquipavel = {
         ataque: atq,
         defesa: def,
-        magia: defm,
+        magia: mag,
         defesam: defm, 
         eqpSlot:eqpSlot
     }

@@ -1,4 +1,4 @@
-const Sequelize = require("sequelize")
+/*const Sequelize = require("sequelize")
 const db = require("../db/db")
 
 var Raca = db.sequelize.define(
@@ -18,4 +18,4 @@ var Raca = db.sequelize.define(
     }
 )
 
-module.exports = Raca;
+module.exports = Raca;*/

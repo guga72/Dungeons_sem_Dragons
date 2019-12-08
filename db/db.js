@@ -1,7 +1,8 @@
 const Sequelize = require("sequelize")
 
+
 const db = {}
-const sequelize = new Sequelize("reactexpress", "root", "12345678", {
+const sequelize = new Sequelize("DsemD", "root", "12345678", {
     host: 'localhost',
     dialect: 'mysql',
     operatorAliases: false,
@@ -16,3 +17,5 @@ const sequelize = new Sequelize("reactexpress", "root", "12345678", {
 
 db.sequelize = sequelize
 db.Sequelize = Sequelize
+
+module.exports = db;

@@ -51,8 +51,8 @@ var Personagem = db.sequelize.define(
 
 )
 
-Personagem.hasOne(Raca);
-Personagem.hasOne(Classe);
+//Personagem.hasOne(Raca);
+//Personagem.hasOne(Classe);
 
 
 module.exports = Personagem;

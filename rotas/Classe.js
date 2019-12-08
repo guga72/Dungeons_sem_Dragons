@@ -4,15 +4,13 @@ const cors = require('cors')
 const Classe = require("../modelos_relacionais/Classe")
 
 classe.use(cors())
-
+//pegar todas as informações das classes
 classe.get('getClasse',(req,res)=>{
     const classeData = {
-        nome : req.body.nomeClasse
+        idClasse : req.body.id_classe,
+        nome : req.body.nome
     }
-    classeData.findOne({
-        where : {
-            nome : classeData.nome
-        }
+    classeData.findAll({
     })
     .then(classe =>{
         res.json(classe);

@@ -12,7 +12,7 @@ personagem.post('/criarPersonagem', (req, res) => {
         nome: req.body.nome,
         sexo: req.body.sexo,
         raca: req.body.raca,
-        classe: req.body.classe,
+        id_classe: req.body.classe,
         sexo: req.body.sexo
     }
     .then(personagem => {

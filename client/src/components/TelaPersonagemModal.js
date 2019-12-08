@@ -10,10 +10,21 @@ export default class TelaPersonagemModal extends React.Component {
             nome: '',
             sexo: '',
             raca: '',
-            classe: ''
+            classe: '',
+            classes : [],
+            racas: []
         };
         this.onChange = this.onChange.bind(this)
         this.onSubmit = this.onSubmit.bind(this)
+    }
+    componentDidMount(){
+        getClasse().then(res=>{
+            if(res){
+                this.setState({
+                    classes: res.body.classes
+                })
+            }
+        })
     }
 
     criarUsuario(){

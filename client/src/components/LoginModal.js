@@ -65,11 +65,7 @@ export default class LoginCadastro extends React.Component {
             senha: this.state.senha
         }
 
-        cadastro(usuario).then(res => {
-            if(res){
-                
-            }
-        })
+        cadastro(usuario);
     }
 
     render(){
@@ -78,11 +74,11 @@ export default class LoginCadastro extends React.Component {
                 <div className="modal-bg">
                     <div className="modal">
                         <div className="boxes">
-                            <SweetAlert
+                            {/*<SweetAlert
                             show={this.state.erro}
                             title="Erro"
                             text="Senha ou Email de usuário errados"
-                            onConfirm={() => this.setState({erro: false})}/>
+                            onConfirm={() => this.setState({erro: false})}/>*/}
                             <div className="login-box login-cadastro-box">
                                 <h3>Login</h3>
                                 <form noValidate onSubmit={this.onSubmitLogin}>

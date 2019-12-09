@@ -32,7 +32,6 @@ function personagemJogador(nome, sexo){
         inventario: [],
         max_peso: 50,
         gold: 0,
-        usarItem: usarItem,
         level: 1,
         eqp: {
             Cabeca: null,

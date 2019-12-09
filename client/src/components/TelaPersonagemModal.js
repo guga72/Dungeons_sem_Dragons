@@ -16,10 +16,13 @@ export default class TelaPersonagemModal extends React.Component {
             classes : [],
             racas: []
         };
-        this.onChange = this.onChange.bind(this)
-        this.onSubmit = this.onSubmit.bind(this)
+        //this.onChange = this.onChange.bind(this)
+        //this.onSubmit = this.onSubmit.bind(this)
     }
-    //quando for criar a tela vai pegar as informações da classe e da Raça
+   
+   
+ //quando for criar a tela vai pegar as informações da classe e da Raça
+ /*
     componentDidMount(){
         getClasse().then(res=>{
             if(res){
@@ -60,7 +63,7 @@ export default class TelaPersonagemModal extends React.Component {
             }
         })
     }
-
+*/
     render(){
         //pegar os valores no banco e colocar no select
         let racas = this.state.racas.map((data)=>
@@ -85,7 +88,7 @@ export default class TelaPersonagemModal extends React.Component {
                 <div className="modal-bg modal2">
                     <div className="modal">
                         <div className="form-box">
-                            <form onSubmit={this.onSubmit}>
+                            <form /*onSubmit={/*this.onSubmit}*/>
                                 <input className="input2" type="text" placeholder="Nome do personagem" name="nome"/>
                                 <div className="sexo">
                                     <p>Sexo:</p>

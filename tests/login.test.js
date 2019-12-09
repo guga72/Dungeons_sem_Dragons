@@ -6,7 +6,7 @@ let browser, page;
 
 beforeEach(async() => {
     browser = await puppeteer.launch({
-        headless: false
+        headless: true
     });
 
     page = await browser.newPage();
@@ -19,6 +19,7 @@ afterEach(async() => {
 
 test("testar url", async() => {
     const url = await page.url();
+    console.log(url)
     assert(url === "http://localhost:3000")
 })
 
@@ -39,8 +40,5 @@ test("testar cadastro e login", async() => {
     await page.$eval('input[name=email2]', el => el.value = 'teste2@teste.com');
     await page.$eval('input[name=senha2]', el => el.value = 'senhateste');
     await page.$eval('button[name=login]', el => el.click());
-
-
-
 
 })

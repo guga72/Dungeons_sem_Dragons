@@ -50,7 +50,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <>{this.state.mostrarLogin ? <LoginCadastro loginModalHandler={this.loginModalHandler} /> : null}</>
-        <>{this.state.temChar ? null : <TelaPersonagemModal personagemModalHandler={this.personagemModalHandler} />}</>
+        {/*<>{this.state.temChar ? null : <TelaPersonagemModal personagemModalHandler={this.personagemModalHandler} />}</>*/}
         <>{this.state.mostrarCombate ? <CombateModal combateHandler={this.combateHandler} /> : null}</>
         <TelaJogo combateHandler={this.combateHandler} />
       </div>

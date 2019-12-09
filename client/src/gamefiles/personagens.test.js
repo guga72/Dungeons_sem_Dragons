@@ -4,7 +4,27 @@ const Inimigo = require('./inimigo');
 
 test('personagem deve poder ser criado', () => {
     let person = personagem.personagemJogador("nome", "sexo");
-    expect(person.nome).toBe("nome");
+    expect(person).toBe({
+        nome:"nome",
+        sexo: "sexo",
+        vida: 100,
+        ataque: 1,
+        defesa: 1,
+        magia: 1,
+        defesaM: 1,
+        inventario: [],
+        max_peso: 50,
+        gold: 0,
+        level: 1,
+        eqp: {
+            Cabeca: null,
+            MaoDireita: null,
+            MaoEsquerda: null,
+            Botas: null,
+            Tronco: null
+            }
+    }
+    );
 });
 
 test('personagem deve poder equipar equipamentos', () => {

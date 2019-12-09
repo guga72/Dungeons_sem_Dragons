@@ -1,3 +1,5 @@
+/*
+
 const express = require("express")
 const classe = express.Router()
 const cors = require('cors')
@@ -21,3 +23,5 @@ classe.get('getClasse',(req,res)=>{
 });
 
 module.exports = classe;
+
+*/

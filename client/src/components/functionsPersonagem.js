@@ -1,4 +1,4 @@
-import axios from 'axios'
+/*import axios from 'axios'
 
 export const criarPersonagem = personagem => {
     return axios
@@ -16,3 +16,4 @@ export const criarPersonagem = personagem => {
         console.log(err)
     })
 }
+*/

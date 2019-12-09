@@ -9,7 +9,6 @@ usuarios.use(cors())
 process.env.SECRET_KEY = 'secret'
 
 usuarios.post('/cadastro', (req, res) => {
-    const today = new Date()
     const userData = {
         email: req.body.email,
         senha: req.body.senha
@@ -43,13 +42,15 @@ usuarios.post('/cadastro', (req, res) => {
 usuarios.post('/login', (req, res) => {
     Usuario.findOne({
         where: {
-            email: req.body.email,
-            senha: req.body.senha
+            email: req.body.email
         }
     })
     .then(usuario => {
         console.log(usuario);
         if(usuario) {
+            let token = jwt.sign(usuario.dataValues, process.env.SECRET_KEY,{
+                expiresIn: 1440
+            })
             res.send(token)
         }else{
             res.status(400).json({error: 'Usuário não existe'})

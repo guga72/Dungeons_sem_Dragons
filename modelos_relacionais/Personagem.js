@@ -1,7 +1,7 @@
 const Sequelize = require("sequelize")
 const db = require("../db/db")
-const Raca = require("./Raca")
-const Classe = require("./Classe")
+//const Raca = require("./Raca")
+//const Classe = require("./Classe")
 
 var Personagem = db.sequelize.define(
     'personagem',

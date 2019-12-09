@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import './LoginModal.css'
+import {getClasse} from './functionsClasse'
 import { criarPersonagem}  from './functionsPersonagem'
+import {getRaca} from './functionsRaca'
 //import '../gamefiles/Usuario'
 
 export default class TelaPersonagemModal extends React.Component {
@@ -17,15 +19,22 @@ export default class TelaPersonagemModal extends React.Component {
         this.onChange = this.onChange.bind(this)
         this.onSubmit = this.onSubmit.bind(this)
     }
+    //quando for criar a tela vai pegar as informações da classe e da Raça
     componentDidMount(){
         getClasse().then(res=>{
             if(res){
                 this.setState({
-                    classes: res.body.classes
+                    classes: res.data.classes
                 })
             }
-        })
-    }
+        }).then(getRaca().then(res=>{
+            if(res){
+                this.setState({
+                    racas: res.data.racas
+                })
+            }
+        }))
+    } 
 
     criarUsuario(){
         
@@ -53,6 +62,24 @@ export default class TelaPersonagemModal extends React.Component {
     }
 
     render(){
+        //pegar os valores no banco e colocar no select
+        let racas = this.state.racas.map((data)=>
+            <option
+                key={data.id}
+                value={data.id}
+                >
+                    {data.nome}
+                </option>
+        )
+
+        let classes = this.state.classes.map((data)=>
+            <option
+                key={data.id}
+                value={data.id}
+                >
+                    {data.nome}
+                </option>
+        )
         return(
             <div className="App">
                 <div className="modal-bg modal2">
@@ -68,16 +95,18 @@ export default class TelaPersonagemModal extends React.Component {
                                     <input type="radio" id="r2" name="sexo" value="Feminino"/>
                                 </div>
                                 <select id="Raca" name="Raça" defaultValue="Raça">
-                                    <option>Elfo</option>
+                                    {racas}
+                                    {/* <option>Elfo</option>
                                     <option>Humano</option>
-                                    <option>Orc</option>
+                                    <option>Orc</option> */}
                                 </select>
 
                                 <select id="Classe" name="Classe" defaultValue="Classe">
-                                    <option>Guerreiro</option>
+                                    {classes}
+                                    {/* <option>Guerreiro</option>
                                     <option>Arqueiro</option>
                                     <option>Ladino</option>
-                                    <option>Evangélico</option>
+                                    <option>Evangélico</option> */}
                                 </select>
 
                                 <button onClick={this.props.criacaoCharHandler} className="botao login-button" type="submit">Criar</button>

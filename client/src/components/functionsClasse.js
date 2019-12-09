@@ -1,7 +1,9 @@
-export const PegarClasse = classe =>{
+import axios from 'axios'
+
+export const getClasse = classes =>{
     return axios
     .get('classe/getClasse',{
-        nome: classe.nome
+        classes: [classes]
     })
     .then(res => {
         return res.data

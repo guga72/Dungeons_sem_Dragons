@@ -7,8 +7,10 @@ classe.use(cors())
 //pegar todas as informações das classes
 classe.get('getClasse',(req,res)=>{
     const classeData = {
+        classe:{
         idClasse : req.body.id_classe,
         nome : req.body.nome
+        }
     }
     classeData.findAll({
     })

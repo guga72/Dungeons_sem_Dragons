@@ -1,7 +1,8 @@
-export const PegarRaca = raca =>{
+import axios from 'axios'
+export const getRaca = racas =>{
     return axios
     .get('classe/getRaca',{
-        nome: raca.nome
+        racas: [ racas]
     })
     .then(res => {
         return res.data

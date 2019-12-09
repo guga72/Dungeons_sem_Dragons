@@ -43,10 +43,12 @@ usuarios.post('/cadastro', (req, res) => {
 usuarios.post('/login', (req, res) => {
     Usuario.findOne({
         where: {
-            email: req.body.email
+            email: req.body.email,
+            senha: req.body.senha
         }
     })
     .then(usuario => {
+        console.log(usuario);
         if(usuario) {
             res.send(token)
         }else{

@@ -5,6 +5,7 @@ const bodyParser = require('body-parser');
 
 let app = express();
 let port = process.env.PORT || 8080;
+app.use(express.static(path.join(__dirname, 'client/build')));
 
 app.use(bodyParser.json())
 app.use(cors())

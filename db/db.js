@@ -4,7 +4,7 @@ const Sequelize = require("sequelize")
 const db = {}
 const sequelize = new Sequelize("DsemD", "root", "", {
     host: 'localhost',
-    dialect: 'mysql',
+    dialect: 'postgres',
     operatorAliases: false,
 
     pool: {

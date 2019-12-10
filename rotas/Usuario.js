@@ -42,7 +42,8 @@ usuarios.post('/cadastro', (req, res) => {
 usuarios.post('/login', (req, res) => {
     Usuario.findOne({
         where: {
-            email: req.body.email
+            email: req.body.email,
+            senha: req.body.senha
         }
     })
     .then(usuario => {

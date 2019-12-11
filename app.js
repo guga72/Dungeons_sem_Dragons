@@ -13,8 +13,14 @@ app.use(cors())
 app.use(bodyParser.urlencoded({extended: false}))
 
 let Usuarios = require('./rotas/Usuario')
+let Classe = require('./rotas/Classe')
+let Raca = require('./rotas/Raca')
+let Personagem = require('./rotas/Personagem')
 
 app.use('/usuario', Usuarios);
+app.use('/classe', Classe);
+app.use('/raca', Raca);
+app.use('/personagem', Personagem);
 
 app.listen(port, () => {
   console.log("Server is running on port: " + port)

@@ -1,12 +1,19 @@
-/*import axios from 'axios'
+const axios = require('axios')
 
 export const criarPersonagem = personagem => {
+    var classe = axios.get('classe/getClasse',{
+        classe: personagem.classe
+    })
+    .then(res => {return res.data})
+    var raca = axios.get('raca/getRaca',{
+       raca: personagem.raca
+    }).then(res=> res.data)
     return axios
     .post('criarPersonagem', {
         nome: personagem.nome,
         sexo: personagem.sexo,
-        classe: personagem.classe,
-        raca: personagem.raca
+        classe: classe.id,
+        raca: raca.id
     })
     .then(res => {
         localStorage.setItem('personagem', res.data)
@@ -16,4 +23,3 @@ export const criarPersonagem = personagem => {
         console.log(err)
     })
 }
-*/

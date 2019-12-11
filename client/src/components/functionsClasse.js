@@ -1,4 +1,4 @@
-/*import axios from 'axios'
+import axios from 'axios'
 
 export const getClasse = classes =>{
     return axios
@@ -9,4 +9,3 @@ export const getClasse = classes =>{
         return res.data
     })
 }
-*/

@@ -1,4 +1,3 @@
-
 const express = require("express")
 const personagem = express.Router()
 const cors = require('cors')
@@ -28,4 +27,3 @@ personagem.post('/criarPersonagem', (req, res) => {
 })
 
 module.exports = personagem;
-

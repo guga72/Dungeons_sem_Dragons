@@ -1,4 +1,4 @@
-/*import axios from 'axios'
+import axios from 'axios'
 export const getRaca = racas =>{
     return axios
     .get('classe/getRaca',{
@@ -8,4 +8,3 @@ export const getRaca = racas =>{
         return res.data
     })
 }
-*/
